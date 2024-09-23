@@ -2,12 +2,12 @@
 // Created by Ö. Haluk KARAKAYA on 23.09.2024.
 //
 
-#include "../../include/get_user_id/getUserId.h"
+#include "../../include/get_room_id/getRoomId.h"
 
-std::string getUserId(int maxLength)
+std::string getRoomId(int maxLength)
 {
     std::string userInput;
-    std::cout << "\033[33mEnter User ID Of Someone You Want To Chat With:\033[0m ";
+    std::cout << "\033[33mEnter a Room ID or Create One:\033[0m ";
 
     while( true )
     {
@@ -34,7 +34,7 @@ std::string getUserId(int maxLength)
                 userInput += upperChar;
 
                 std::cout << "\033[33m";
-                std::cout << "\rEnter User ID Of Someone You Want To Chat With:\033[0m ";
+                std::cout << "\rEnter a Room ID or Create One:\033[0m ";
                 std::cout << "\033[1;34m" << userInput << "\033[0m";
             }
         }
