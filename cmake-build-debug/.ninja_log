@@ -1,0 +1,11 @@
+# ninja log v5
+1	97	1727088799563830262	build.ninja	f3bfa733be05b71
+0	985	1727083368448876162	CMakeFiles/cpp_network_programming_cli_chat_app.dir/main.cpp.o	797cdedd44b47d41
+1086	1156	1727087503630975533	cpp_network_programming_cli_chat_app	1baec12efeed57ef
+12	1085	1727087503554719011	CMakeFiles/cpp_network_programming_cli_chat_app.dir/src/main.cpp.o	cf4b0954757a8f9a
+11	1128	1727085312254923498	CMakeFiles/cpp_network_programming_cli_chat_app.dir/src/random_bytes/random_bytes.cpp.o	41bf8cf58a913341
+12	654	1727085311782821749	CMakeFiles/cpp_network_programming_cli_chat_app.dir/src/to_upper_case/toUpperCase.cpp.o	f11ed7b3cb8d287a
+10	989	1727087168182851803	CMakeFiles/cpp_network_programming_cli_chat_app.dir/src/getch/getch.cpp.o	d676ee0bbf7fbc6a
+11	984	1727089501880096556	CMakeFiles/cpp_network_programming_cli_chat_app.dir/src/get_user_id/getUserId.cpp.o	a1f97a5cc717638f
+10	1081	1727089501977411109	CMakeFiles/cpp_network_programming_cli_chat_app.dir/src/main.cpp.o	cf4b0954757a8f9a
+1081	1156	1727089502058095875	cpp_network_programming_cli_chat_app	d0e5d87c3443d0f7
