@@ -129,149 +129,245 @@ cpp_network_programming_cli_chat_app/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpp_network_programming_cli_chat_app.dir/build.make CMakeFiles/cpp_network_programming_cli_chat_app.dir/build
 .PHONY : cpp_network_programming_cli_chat_app/fast
 
-src/get_room_id/getRoomId.o: src/get_room_id/getRoomId.cpp.o
-.PHONY : src/get_room_id/getRoomId.o
+development/get_room_id/src/getRoomId.o: development/get_room_id/src/getRoomId.cpp.o
+.PHONY : development/get_room_id/src/getRoomId.o
 
 # target to build an object file
-src/get_room_id/getRoomId.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpp_network_programming_cli_chat_app.dir/build.make CMakeFiles/cpp_network_programming_cli_chat_app.dir/src/get_room_id/getRoomId.cpp.o
-.PHONY : src/get_room_id/getRoomId.cpp.o
+development/get_room_id/src/getRoomId.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpp_network_programming_cli_chat_app.dir/build.make CMakeFiles/cpp_network_programming_cli_chat_app.dir/development/get_room_id/src/getRoomId.cpp.o
+.PHONY : development/get_room_id/src/getRoomId.cpp.o
 
-src/get_room_id/getRoomId.i: src/get_room_id/getRoomId.cpp.i
-.PHONY : src/get_room_id/getRoomId.i
+development/get_room_id/src/getRoomId.i: development/get_room_id/src/getRoomId.cpp.i
+.PHONY : development/get_room_id/src/getRoomId.i
 
 # target to preprocess a source file
-src/get_room_id/getRoomId.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpp_network_programming_cli_chat_app.dir/build.make CMakeFiles/cpp_network_programming_cli_chat_app.dir/src/get_room_id/getRoomId.cpp.i
-.PHONY : src/get_room_id/getRoomId.cpp.i
+development/get_room_id/src/getRoomId.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpp_network_programming_cli_chat_app.dir/build.make CMakeFiles/cpp_network_programming_cli_chat_app.dir/development/get_room_id/src/getRoomId.cpp.i
+.PHONY : development/get_room_id/src/getRoomId.cpp.i
 
-src/get_room_id/getRoomId.s: src/get_room_id/getRoomId.cpp.s
-.PHONY : src/get_room_id/getRoomId.s
+development/get_room_id/src/getRoomId.s: development/get_room_id/src/getRoomId.cpp.s
+.PHONY : development/get_room_id/src/getRoomId.s
 
 # target to generate assembly for a file
-src/get_room_id/getRoomId.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpp_network_programming_cli_chat_app.dir/build.make CMakeFiles/cpp_network_programming_cli_chat_app.dir/src/get_room_id/getRoomId.cpp.s
-.PHONY : src/get_room_id/getRoomId.cpp.s
+development/get_room_id/src/getRoomId.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpp_network_programming_cli_chat_app.dir/build.make CMakeFiles/cpp_network_programming_cli_chat_app.dir/development/get_room_id/src/getRoomId.cpp.s
+.PHONY : development/get_room_id/src/getRoomId.cpp.s
 
-src/getch/getch.o: src/getch/getch.cpp.o
-.PHONY : src/getch/getch.o
+development/helpers/get_ip_adress/src/getIpAdress.o: development/helpers/get_ip_adress/src/getIpAdress.cpp.o
+.PHONY : development/helpers/get_ip_adress/src/getIpAdress.o
 
 # target to build an object file
-src/getch/getch.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpp_network_programming_cli_chat_app.dir/build.make CMakeFiles/cpp_network_programming_cli_chat_app.dir/src/getch/getch.cpp.o
-.PHONY : src/getch/getch.cpp.o
+development/helpers/get_ip_adress/src/getIpAdress.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpp_network_programming_cli_chat_app.dir/build.make CMakeFiles/cpp_network_programming_cli_chat_app.dir/development/helpers/get_ip_adress/src/getIpAdress.cpp.o
+.PHONY : development/helpers/get_ip_adress/src/getIpAdress.cpp.o
 
-src/getch/getch.i: src/getch/getch.cpp.i
-.PHONY : src/getch/getch.i
+development/helpers/get_ip_adress/src/getIpAdress.i: development/helpers/get_ip_adress/src/getIpAdress.cpp.i
+.PHONY : development/helpers/get_ip_adress/src/getIpAdress.i
 
 # target to preprocess a source file
-src/getch/getch.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpp_network_programming_cli_chat_app.dir/build.make CMakeFiles/cpp_network_programming_cli_chat_app.dir/src/getch/getch.cpp.i
-.PHONY : src/getch/getch.cpp.i
+development/helpers/get_ip_adress/src/getIpAdress.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpp_network_programming_cli_chat_app.dir/build.make CMakeFiles/cpp_network_programming_cli_chat_app.dir/development/helpers/get_ip_adress/src/getIpAdress.cpp.i
+.PHONY : development/helpers/get_ip_adress/src/getIpAdress.cpp.i
 
-src/getch/getch.s: src/getch/getch.cpp.s
-.PHONY : src/getch/getch.s
+development/helpers/get_ip_adress/src/getIpAdress.s: development/helpers/get_ip_adress/src/getIpAdress.cpp.s
+.PHONY : development/helpers/get_ip_adress/src/getIpAdress.s
 
 # target to generate assembly for a file
-src/getch/getch.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpp_network_programming_cli_chat_app.dir/build.make CMakeFiles/cpp_network_programming_cli_chat_app.dir/src/getch/getch.cpp.s
-.PHONY : src/getch/getch.cpp.s
+development/helpers/get_ip_adress/src/getIpAdress.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpp_network_programming_cli_chat_app.dir/build.make CMakeFiles/cpp_network_programming_cli_chat_app.dir/development/helpers/get_ip_adress/src/getIpAdress.cpp.s
+.PHONY : development/helpers/get_ip_adress/src/getIpAdress.cpp.s
 
-src/main.o: src/main.cpp.o
-.PHONY : src/main.o
+development/helpers/getch/src/getch.o: development/helpers/getch/src/getch.cpp.o
+.PHONY : development/helpers/getch/src/getch.o
 
 # target to build an object file
-src/main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpp_network_programming_cli_chat_app.dir/build.make CMakeFiles/cpp_network_programming_cli_chat_app.dir/src/main.cpp.o
-.PHONY : src/main.cpp.o
+development/helpers/getch/src/getch.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpp_network_programming_cli_chat_app.dir/build.make CMakeFiles/cpp_network_programming_cli_chat_app.dir/development/helpers/getch/src/getch.cpp.o
+.PHONY : development/helpers/getch/src/getch.cpp.o
 
-src/main.i: src/main.cpp.i
-.PHONY : src/main.i
+development/helpers/getch/src/getch.i: development/helpers/getch/src/getch.cpp.i
+.PHONY : development/helpers/getch/src/getch.i
 
 # target to preprocess a source file
-src/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpp_network_programming_cli_chat_app.dir/build.make CMakeFiles/cpp_network_programming_cli_chat_app.dir/src/main.cpp.i
-.PHONY : src/main.cpp.i
+development/helpers/getch/src/getch.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpp_network_programming_cli_chat_app.dir/build.make CMakeFiles/cpp_network_programming_cli_chat_app.dir/development/helpers/getch/src/getch.cpp.i
+.PHONY : development/helpers/getch/src/getch.cpp.i
 
-src/main.s: src/main.cpp.s
-.PHONY : src/main.s
+development/helpers/getch/src/getch.s: development/helpers/getch/src/getch.cpp.s
+.PHONY : development/helpers/getch/src/getch.s
 
 # target to generate assembly for a file
-src/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpp_network_programming_cli_chat_app.dir/build.make CMakeFiles/cpp_network_programming_cli_chat_app.dir/src/main.cpp.s
-.PHONY : src/main.cpp.s
+development/helpers/getch/src/getch.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpp_network_programming_cli_chat_app.dir/build.make CMakeFiles/cpp_network_programming_cli_chat_app.dir/development/helpers/getch/src/getch.cpp.s
+.PHONY : development/helpers/getch/src/getch.cpp.s
 
-src/random_bytes/random_bytes.o: src/random_bytes/random_bytes.cpp.o
-.PHONY : src/random_bytes/random_bytes.o
+development/helpers/random_bytes/src/random_bytes.o: development/helpers/random_bytes/src/random_bytes.cpp.o
+.PHONY : development/helpers/random_bytes/src/random_bytes.o
 
 # target to build an object file
-src/random_bytes/random_bytes.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpp_network_programming_cli_chat_app.dir/build.make CMakeFiles/cpp_network_programming_cli_chat_app.dir/src/random_bytes/random_bytes.cpp.o
-.PHONY : src/random_bytes/random_bytes.cpp.o
+development/helpers/random_bytes/src/random_bytes.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpp_network_programming_cli_chat_app.dir/build.make CMakeFiles/cpp_network_programming_cli_chat_app.dir/development/helpers/random_bytes/src/random_bytes.cpp.o
+.PHONY : development/helpers/random_bytes/src/random_bytes.cpp.o
 
-src/random_bytes/random_bytes.i: src/random_bytes/random_bytes.cpp.i
-.PHONY : src/random_bytes/random_bytes.i
+development/helpers/random_bytes/src/random_bytes.i: development/helpers/random_bytes/src/random_bytes.cpp.i
+.PHONY : development/helpers/random_bytes/src/random_bytes.i
 
 # target to preprocess a source file
-src/random_bytes/random_bytes.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpp_network_programming_cli_chat_app.dir/build.make CMakeFiles/cpp_network_programming_cli_chat_app.dir/src/random_bytes/random_bytes.cpp.i
-.PHONY : src/random_bytes/random_bytes.cpp.i
+development/helpers/random_bytes/src/random_bytes.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpp_network_programming_cli_chat_app.dir/build.make CMakeFiles/cpp_network_programming_cli_chat_app.dir/development/helpers/random_bytes/src/random_bytes.cpp.i
+.PHONY : development/helpers/random_bytes/src/random_bytes.cpp.i
 
-src/random_bytes/random_bytes.s: src/random_bytes/random_bytes.cpp.s
-.PHONY : src/random_bytes/random_bytes.s
+development/helpers/random_bytes/src/random_bytes.s: development/helpers/random_bytes/src/random_bytes.cpp.s
+.PHONY : development/helpers/random_bytes/src/random_bytes.s
 
 # target to generate assembly for a file
-src/random_bytes/random_bytes.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpp_network_programming_cli_chat_app.dir/build.make CMakeFiles/cpp_network_programming_cli_chat_app.dir/src/random_bytes/random_bytes.cpp.s
-.PHONY : src/random_bytes/random_bytes.cpp.s
+development/helpers/random_bytes/src/random_bytes.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpp_network_programming_cli_chat_app.dir/build.make CMakeFiles/cpp_network_programming_cli_chat_app.dir/development/helpers/random_bytes/src/random_bytes.cpp.s
+.PHONY : development/helpers/random_bytes/src/random_bytes.cpp.s
 
-src/room/room.o: src/room/room.cpp.o
-.PHONY : src/room/room.o
+development/helpers/send_to_ip/src/sendToIp.o: development/helpers/send_to_ip/src/sendToIp.cpp.o
+.PHONY : development/helpers/send_to_ip/src/sendToIp.o
 
 # target to build an object file
-src/room/room.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpp_network_programming_cli_chat_app.dir/build.make CMakeFiles/cpp_network_programming_cli_chat_app.dir/src/room/room.cpp.o
-.PHONY : src/room/room.cpp.o
+development/helpers/send_to_ip/src/sendToIp.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpp_network_programming_cli_chat_app.dir/build.make CMakeFiles/cpp_network_programming_cli_chat_app.dir/development/helpers/send_to_ip/src/sendToIp.cpp.o
+.PHONY : development/helpers/send_to_ip/src/sendToIp.cpp.o
 
-src/room/room.i: src/room/room.cpp.i
-.PHONY : src/room/room.i
+development/helpers/send_to_ip/src/sendToIp.i: development/helpers/send_to_ip/src/sendToIp.cpp.i
+.PHONY : development/helpers/send_to_ip/src/sendToIp.i
 
 # target to preprocess a source file
-src/room/room.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpp_network_programming_cli_chat_app.dir/build.make CMakeFiles/cpp_network_programming_cli_chat_app.dir/src/room/room.cpp.i
-.PHONY : src/room/room.cpp.i
+development/helpers/send_to_ip/src/sendToIp.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpp_network_programming_cli_chat_app.dir/build.make CMakeFiles/cpp_network_programming_cli_chat_app.dir/development/helpers/send_to_ip/src/sendToIp.cpp.i
+.PHONY : development/helpers/send_to_ip/src/sendToIp.cpp.i
 
-src/room/room.s: src/room/room.cpp.s
-.PHONY : src/room/room.s
+development/helpers/send_to_ip/src/sendToIp.s: development/helpers/send_to_ip/src/sendToIp.cpp.s
+.PHONY : development/helpers/send_to_ip/src/sendToIp.s
 
 # target to generate assembly for a file
-src/room/room.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpp_network_programming_cli_chat_app.dir/build.make CMakeFiles/cpp_network_programming_cli_chat_app.dir/src/room/room.cpp.s
-.PHONY : src/room/room.cpp.s
+development/helpers/send_to_ip/src/sendToIp.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpp_network_programming_cli_chat_app.dir/build.make CMakeFiles/cpp_network_programming_cli_chat_app.dir/development/helpers/send_to_ip/src/sendToIp.cpp.s
+.PHONY : development/helpers/send_to_ip/src/sendToIp.cpp.s
 
-src/to_upper_case/toUpperCase.o: src/to_upper_case/toUpperCase.cpp.o
-.PHONY : src/to_upper_case/toUpperCase.o
+development/helpers/to_upper_case/src/toUpperCase.o: development/helpers/to_upper_case/src/toUpperCase.cpp.o
+.PHONY : development/helpers/to_upper_case/src/toUpperCase.o
 
 # target to build an object file
-src/to_upper_case/toUpperCase.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpp_network_programming_cli_chat_app.dir/build.make CMakeFiles/cpp_network_programming_cli_chat_app.dir/src/to_upper_case/toUpperCase.cpp.o
-.PHONY : src/to_upper_case/toUpperCase.cpp.o
+development/helpers/to_upper_case/src/toUpperCase.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpp_network_programming_cli_chat_app.dir/build.make CMakeFiles/cpp_network_programming_cli_chat_app.dir/development/helpers/to_upper_case/src/toUpperCase.cpp.o
+.PHONY : development/helpers/to_upper_case/src/toUpperCase.cpp.o
 
-src/to_upper_case/toUpperCase.i: src/to_upper_case/toUpperCase.cpp.i
-.PHONY : src/to_upper_case/toUpperCase.i
+development/helpers/to_upper_case/src/toUpperCase.i: development/helpers/to_upper_case/src/toUpperCase.cpp.i
+.PHONY : development/helpers/to_upper_case/src/toUpperCase.i
 
 # target to preprocess a source file
-src/to_upper_case/toUpperCase.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpp_network_programming_cli_chat_app.dir/build.make CMakeFiles/cpp_network_programming_cli_chat_app.dir/src/to_upper_case/toUpperCase.cpp.i
-.PHONY : src/to_upper_case/toUpperCase.cpp.i
+development/helpers/to_upper_case/src/toUpperCase.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpp_network_programming_cli_chat_app.dir/build.make CMakeFiles/cpp_network_programming_cli_chat_app.dir/development/helpers/to_upper_case/src/toUpperCase.cpp.i
+.PHONY : development/helpers/to_upper_case/src/toUpperCase.cpp.i
 
-src/to_upper_case/toUpperCase.s: src/to_upper_case/toUpperCase.cpp.s
-.PHONY : src/to_upper_case/toUpperCase.s
+development/helpers/to_upper_case/src/toUpperCase.s: development/helpers/to_upper_case/src/toUpperCase.cpp.s
+.PHONY : development/helpers/to_upper_case/src/toUpperCase.s
 
 # target to generate assembly for a file
-src/to_upper_case/toUpperCase.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpp_network_programming_cli_chat_app.dir/build.make CMakeFiles/cpp_network_programming_cli_chat_app.dir/src/to_upper_case/toUpperCase.cpp.s
-.PHONY : src/to_upper_case/toUpperCase.cpp.s
+development/helpers/to_upper_case/src/toUpperCase.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpp_network_programming_cli_chat_app.dir/build.make CMakeFiles/cpp_network_programming_cli_chat_app.dir/development/helpers/to_upper_case/src/toUpperCase.cpp.s
+.PHONY : development/helpers/to_upper_case/src/toUpperCase.cpp.s
+
+main.o: main.cpp.o
+.PHONY : main.o
+
+# target to build an object file
+main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpp_network_programming_cli_chat_app.dir/build.make CMakeFiles/cpp_network_programming_cli_chat_app.dir/main.cpp.o
+.PHONY : main.cpp.o
+
+main.i: main.cpp.i
+.PHONY : main.i
+
+# target to preprocess a source file
+main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpp_network_programming_cli_chat_app.dir/build.make CMakeFiles/cpp_network_programming_cli_chat_app.dir/main.cpp.i
+.PHONY : main.cpp.i
+
+main.s: main.cpp.s
+.PHONY : main.s
+
+# target to generate assembly for a file
+main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpp_network_programming_cli_chat_app.dir/build.make CMakeFiles/cpp_network_programming_cli_chat_app.dir/main.cpp.s
+.PHONY : main.cpp.s
+
+models/message/src/message.o: models/message/src/message.cpp.o
+.PHONY : models/message/src/message.o
+
+# target to build an object file
+models/message/src/message.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpp_network_programming_cli_chat_app.dir/build.make CMakeFiles/cpp_network_programming_cli_chat_app.dir/models/message/src/message.cpp.o
+.PHONY : models/message/src/message.cpp.o
+
+models/message/src/message.i: models/message/src/message.cpp.i
+.PHONY : models/message/src/message.i
+
+# target to preprocess a source file
+models/message/src/message.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpp_network_programming_cli_chat_app.dir/build.make CMakeFiles/cpp_network_programming_cli_chat_app.dir/models/message/src/message.cpp.i
+.PHONY : models/message/src/message.cpp.i
+
+models/message/src/message.s: models/message/src/message.cpp.s
+.PHONY : models/message/src/message.s
+
+# target to generate assembly for a file
+models/message/src/message.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpp_network_programming_cli_chat_app.dir/build.make CMakeFiles/cpp_network_programming_cli_chat_app.dir/models/message/src/message.cpp.s
+.PHONY : models/message/src/message.cpp.s
+
+models/room/src/room.o: models/room/src/room.cpp.o
+.PHONY : models/room/src/room.o
+
+# target to build an object file
+models/room/src/room.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpp_network_programming_cli_chat_app.dir/build.make CMakeFiles/cpp_network_programming_cli_chat_app.dir/models/room/src/room.cpp.o
+.PHONY : models/room/src/room.cpp.o
+
+models/room/src/room.i: models/room/src/room.cpp.i
+.PHONY : models/room/src/room.i
+
+# target to preprocess a source file
+models/room/src/room.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpp_network_programming_cli_chat_app.dir/build.make CMakeFiles/cpp_network_programming_cli_chat_app.dir/models/room/src/room.cpp.i
+.PHONY : models/room/src/room.cpp.i
+
+models/room/src/room.s: models/room/src/room.cpp.s
+.PHONY : models/room/src/room.s
+
+# target to generate assembly for a file
+models/room/src/room.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpp_network_programming_cli_chat_app.dir/build.make CMakeFiles/cpp_network_programming_cli_chat_app.dir/models/room/src/room.cpp.s
+.PHONY : models/room/src/room.cpp.s
+
+models/room_member/src/room_member.o: models/room_member/src/room_member.cpp.o
+.PHONY : models/room_member/src/room_member.o
+
+# target to build an object file
+models/room_member/src/room_member.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpp_network_programming_cli_chat_app.dir/build.make CMakeFiles/cpp_network_programming_cli_chat_app.dir/models/room_member/src/room_member.cpp.o
+.PHONY : models/room_member/src/room_member.cpp.o
+
+models/room_member/src/room_member.i: models/room_member/src/room_member.cpp.i
+.PHONY : models/room_member/src/room_member.i
+
+# target to preprocess a source file
+models/room_member/src/room_member.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpp_network_programming_cli_chat_app.dir/build.make CMakeFiles/cpp_network_programming_cli_chat_app.dir/models/room_member/src/room_member.cpp.i
+.PHONY : models/room_member/src/room_member.cpp.i
+
+models/room_member/src/room_member.s: models/room_member/src/room_member.cpp.s
+.PHONY : models/room_member/src/room_member.s
+
+# target to generate assembly for a file
+models/room_member/src/room_member.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpp_network_programming_cli_chat_app.dir/build.make CMakeFiles/cpp_network_programming_cli_chat_app.dir/models/room_member/src/room_member.cpp.s
+.PHONY : models/room_member/src/room_member.cpp.s
 
 # Help Target
 help:
@@ -282,24 +378,36 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... cpp_network_programming_cli_chat_app"
-	@echo "... src/get_room_id/getRoomId.o"
-	@echo "... src/get_room_id/getRoomId.i"
-	@echo "... src/get_room_id/getRoomId.s"
-	@echo "... src/getch/getch.o"
-	@echo "... src/getch/getch.i"
-	@echo "... src/getch/getch.s"
-	@echo "... src/main.o"
-	@echo "... src/main.i"
-	@echo "... src/main.s"
-	@echo "... src/random_bytes/random_bytes.o"
-	@echo "... src/random_bytes/random_bytes.i"
-	@echo "... src/random_bytes/random_bytes.s"
-	@echo "... src/room/room.o"
-	@echo "... src/room/room.i"
-	@echo "... src/room/room.s"
-	@echo "... src/to_upper_case/toUpperCase.o"
-	@echo "... src/to_upper_case/toUpperCase.i"
-	@echo "... src/to_upper_case/toUpperCase.s"
+	@echo "... development/get_room_id/src/getRoomId.o"
+	@echo "... development/get_room_id/src/getRoomId.i"
+	@echo "... development/get_room_id/src/getRoomId.s"
+	@echo "... development/helpers/get_ip_adress/src/getIpAdress.o"
+	@echo "... development/helpers/get_ip_adress/src/getIpAdress.i"
+	@echo "... development/helpers/get_ip_adress/src/getIpAdress.s"
+	@echo "... development/helpers/getch/src/getch.o"
+	@echo "... development/helpers/getch/src/getch.i"
+	@echo "... development/helpers/getch/src/getch.s"
+	@echo "... development/helpers/random_bytes/src/random_bytes.o"
+	@echo "... development/helpers/random_bytes/src/random_bytes.i"
+	@echo "... development/helpers/random_bytes/src/random_bytes.s"
+	@echo "... development/helpers/send_to_ip/src/sendToIp.o"
+	@echo "... development/helpers/send_to_ip/src/sendToIp.i"
+	@echo "... development/helpers/send_to_ip/src/sendToIp.s"
+	@echo "... development/helpers/to_upper_case/src/toUpperCase.o"
+	@echo "... development/helpers/to_upper_case/src/toUpperCase.i"
+	@echo "... development/helpers/to_upper_case/src/toUpperCase.s"
+	@echo "... main.o"
+	@echo "... main.i"
+	@echo "... main.s"
+	@echo "... models/message/src/message.o"
+	@echo "... models/message/src/message.i"
+	@echo "... models/message/src/message.s"
+	@echo "... models/room/src/room.o"
+	@echo "... models/room/src/room.i"
+	@echo "... models/room/src/room.s"
+	@echo "... models/room_member/src/room_member.o"
+	@echo "... models/room_member/src/room_member.i"
+	@echo "... models/room_member/src/room_member.s"
 .PHONY : help
 
 
