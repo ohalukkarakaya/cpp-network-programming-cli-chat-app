@@ -9,10 +9,10 @@ int main() {
   std::string randomId = generateRandomBytesHex(10);
   std::string ipAdress = getIPAddress();
 
-  std::cout << "\033[33mYour User ID: \033[34m" << randomId << "\033[0m"
-            << std::endl;
 
-  const int maxLength = 10;
+  std::cout << "\033[33mYour User ID: \033[34m" << randomId << "\033[0m" << std::endl;
+
+  const int   maxLength       = 10;
   std::string userInputRoomId = getRoomId(maxLength);
 
   std::system("clear");

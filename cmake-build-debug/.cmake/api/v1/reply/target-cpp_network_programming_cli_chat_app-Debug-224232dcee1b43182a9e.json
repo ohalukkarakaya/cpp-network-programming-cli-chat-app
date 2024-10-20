@@ -124,106 +124,106 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "src/main.cpp",
+			"path" : "main.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
-			"path" : "src/random_bytes/random_bytes.h",
+			"path" : "development/helpers/random_bytes/include/random_bytes.h",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "src/random_bytes/random_bytes.cpp",
+			"path" : "development/helpers/random_bytes/src/random_bytes.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
-			"path" : "src/to_upper_case/toUpperCase.h",
+			"path" : "development/helpers/to_upper_case/include/toUpperCase.h",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "src/to_upper_case/toUpperCase.cpp",
+			"path" : "development/helpers/to_upper_case/src/toUpperCase.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
-			"path" : "src/getch/getch.h",
+			"path" : "development/helpers/getch/include/getch.h",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "src/getch/getch.cpp",
+			"path" : "development/helpers/getch/src/getch.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
-			"path" : "src/get_room_id/getRoomId.h",
+			"path" : "development/get_room_id/include/getRoomId.h",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "src/get_room_id/getRoomId.cpp",
+			"path" : "development/get_room_id/src/getRoomId.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
-			"path" : "src/room/room.h",
+			"path" : "models/room/include/room.h",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "src/room/room.cpp",
+			"path" : "models/room/src/room.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
-			"path" : "src/room_member/room_member.h",
+			"path" : "models/room_member/include/room_member.h",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "src/room_member/room_member.cpp",
+			"path" : "models/room_member/src/room_member.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
-			"path" : "src/get_ip_adress/getIpAdress.h",
+			"path" : "development/helpers/get_ip_adress/include/getIpAdress.h",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "src/get_ip_adress/getIpAdress.cpp",
+			"path" : "development/helpers/get_ip_adress/src/getIpAdress.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
-			"path" : "src/message/message.h",
+			"path" : "models/message/include/message.h",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "src/message/message.cpp",
+			"path" : "models/message/src/message.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
-			"path" : "src/send_to_ip/sendToIp.h",
+			"path" : "development/helpers/send_to_ip/include/sendToIp.h",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "src/send_to_ip/sendToIp.cpp",
+			"path" : "development/helpers/send_to_ip/src/sendToIp.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],
