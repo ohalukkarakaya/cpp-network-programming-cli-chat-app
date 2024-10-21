@@ -201,6 +201,30 @@ development/helpers/getch/src/getch.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpp_network_programming_cli_chat_app.dir/build.make CMakeFiles/cpp_network_programming_cli_chat_app.dir/development/helpers/getch/src/getch.cpp.s
 .PHONY : development/helpers/getch/src/getch.cpp.s
 
+development/helpers/parse_server_response/parse_server_response.o: development/helpers/parse_server_response/parse_server_response.cpp.o
+.PHONY : development/helpers/parse_server_response/parse_server_response.o
+
+# target to build an object file
+development/helpers/parse_server_response/parse_server_response.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpp_network_programming_cli_chat_app.dir/build.make CMakeFiles/cpp_network_programming_cli_chat_app.dir/development/helpers/parse_server_response/parse_server_response.cpp.o
+.PHONY : development/helpers/parse_server_response/parse_server_response.cpp.o
+
+development/helpers/parse_server_response/parse_server_response.i: development/helpers/parse_server_response/parse_server_response.cpp.i
+.PHONY : development/helpers/parse_server_response/parse_server_response.i
+
+# target to preprocess a source file
+development/helpers/parse_server_response/parse_server_response.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpp_network_programming_cli_chat_app.dir/build.make CMakeFiles/cpp_network_programming_cli_chat_app.dir/development/helpers/parse_server_response/parse_server_response.cpp.i
+.PHONY : development/helpers/parse_server_response/parse_server_response.cpp.i
+
+development/helpers/parse_server_response/parse_server_response.s: development/helpers/parse_server_response/parse_server_response.cpp.s
+.PHONY : development/helpers/parse_server_response/parse_server_response.s
+
+# target to generate assembly for a file
+development/helpers/parse_server_response/parse_server_response.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpp_network_programming_cli_chat_app.dir/build.make CMakeFiles/cpp_network_programming_cli_chat_app.dir/development/helpers/parse_server_response/parse_server_response.cpp.s
+.PHONY : development/helpers/parse_server_response/parse_server_response.cpp.s
+
 development/helpers/random_bytes/src/random_bytes.o: development/helpers/random_bytes/src/random_bytes.cpp.o
 .PHONY : development/helpers/random_bytes/src/random_bytes.o
 
@@ -387,6 +411,9 @@ help:
 	@echo "... development/helpers/getch/src/getch.o"
 	@echo "... development/helpers/getch/src/getch.i"
 	@echo "... development/helpers/getch/src/getch.s"
+	@echo "... development/helpers/parse_server_response/parse_server_response.o"
+	@echo "... development/helpers/parse_server_response/parse_server_response.i"
+	@echo "... development/helpers/parse_server_response/parse_server_response.s"
 	@echo "... development/helpers/random_bytes/src/random_bytes.o"
 	@echo "... development/helpers/random_bytes/src/random_bytes.i"
 	@echo "... development/helpers/random_bytes/src/random_bytes.s"

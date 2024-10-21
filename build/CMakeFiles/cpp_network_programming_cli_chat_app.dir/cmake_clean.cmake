@@ -5,6 +5,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/cpp_network_programming_cli_chat_app.dir/development/helpers/get_ip_adress/src/getIpAdress.cpp.o.d"
   "CMakeFiles/cpp_network_programming_cli_chat_app.dir/development/helpers/getch/src/getch.cpp.o"
   "CMakeFiles/cpp_network_programming_cli_chat_app.dir/development/helpers/getch/src/getch.cpp.o.d"
+  "CMakeFiles/cpp_network_programming_cli_chat_app.dir/development/helpers/parse_server_response/parse_server_response.cpp.o"
+  "CMakeFiles/cpp_network_programming_cli_chat_app.dir/development/helpers/parse_server_response/parse_server_response.cpp.o.d"
   "CMakeFiles/cpp_network_programming_cli_chat_app.dir/development/helpers/random_bytes/src/random_bytes.cpp.o"
   "CMakeFiles/cpp_network_programming_cli_chat_app.dir/development/helpers/random_bytes/src/random_bytes.cpp.o.d"
   "CMakeFiles/cpp_network_programming_cli_chat_app.dir/development/helpers/send_to_ip/src/sendToIp.cpp.o"

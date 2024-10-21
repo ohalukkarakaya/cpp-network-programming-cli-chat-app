@@ -32,4 +32,6 @@ add_executable(
         
         development/helpers/send_to_ip/include/sendToIp.h
         development/helpers/send_to_ip/src/sendToIp.cpp
+        development/helpers/parse_server_response/parse_server_response.h
+        development/helpers/parse_server_response/parse_server_response.cpp
 )
