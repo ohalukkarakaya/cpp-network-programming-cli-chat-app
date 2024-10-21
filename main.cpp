@@ -3,53 +3,41 @@
 #include "development/get_room_id/include/getRoomId.h"
 #include "development/helpers/get_ip_adress/include/getIpAdress.h"
 #include "development/helpers/random_bytes/include/random_bytes.h"
+#include "development/helpers/send_to_ip/include/sendToIp.h"
+#include "development/helpers/parse_server_response/parse_server_response.h"
+
 #include "models/room/include/room.h"
 
 #define PORT 9090
+#define BUFFER_SIZE 1024
 
 int main() {
   std::string randomId = generateRandomBytesHex(10);
   std::string ipAdress = getIPAddress();
 
-  int sock = 0;
-  struct sockaddr_in serv_addr;
-  // char* message = "JOIN/user123/192.168.1.1/room1";
-  const char* message = "GETROOMS/0/0/0";
-  char buffer[1024] = {0};
+  std::string serverIp = "127.0.0.1";
+  std::string message;
+  message = "GETROOMS/0/0/0";
 
-  // Socket oluşturma
-  if ((sock = socket(AF_INET, SOCK_STREAM, 0)) < 0) {
-    std::cerr << "Socket creation error" << std::endl;
-    return -1;
+  char buffer[BUFFER_SIZE] = {0};
+
+  int sock = sendToIp(serverIp, message, "GETROOMS");
+
+  // Sunucudan yanıt al
+  int valread = read(sock, buffer, 1024);
+  std::vector<std::string> rooms = parse_server_response( buffer );
+
+  std::cout << std::endl;
+  std::cout << "\033[1;33mActive Rooms:\033[0m" << std::endl;
+  std::cout << std::endl;
+
+  for( const std::string& room_name : rooms ){
+      std::cout << "- " << room_name << std::endl;
   }
+  std::cout << std::endl;
 
-    memset(&serv_addr, 0, sizeof(serv_addr)); // Servis adresini sıfırlayın
-    serv_addr.sin_family = AF_INET; // AIPv4
-    serv_addr.sin_port = htons(PORT); // Port numarasını ayarlayın
-
-    // Sunucu IP adresini ayarla
-    if (inet_pton(AF_INET, "127.0.0.1", &serv_addr.sin_addr) <= 0) {
-        std::cerr << "Invalid address/ Address not supported" << std::endl;
-        return -1;
-    }
-
-    // Sunucuya bağlan
-    int connection = connect(sock, (struct sockaddr*)&serv_addr, sizeof(serv_addr));
-    if (connection < 0) {
-        std::cerr << "Connection Failed: " << connection << std::endl;
-        return -1;
-    }
-
-    // Mesaj gönder
-    send(sock, message, strlen(message), 0);
-    std::cout << "Message sent: " << message << std::endl;
-
-    // Sunucudan yanıt al
-    int valread = read(sock, buffer, 1024);
-    std::cout << "Response from server: " << buffer << std::endl;
-
-    // Socket kapat
-    close(sock);
+  // Socket kapat
+  close(sock);
 
   std::cout << "\033[33mYour User ID: \033[34m" << randomId << "\033[0m" << std::endl;
 
@@ -57,6 +45,15 @@ int main() {
   std::string userInputRoomId = getRoomId(maxLength);
 
   std::system("clear");
+
+  message = "JOINROOM/" + randomId + "/" + ipAdress + "/" + userInputRoomId;
+  int joinSock = sendToIp(serverIp, message, "JOINROOM");
+
+  valread = read(sock, buffer, 1024);
+
+  std::cout << "- " << buffer << std::endl;
+  // Socket kapat
+  close(joinSock);
 
   Room room(userInputRoomId);
   room.userJoined(randomId, randomId, ipAdress);
