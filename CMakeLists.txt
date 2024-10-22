@@ -34,4 +34,10 @@ add_executable(
         development/helpers/send_to_ip/src/sendToIp.cpp
         development/helpers/parse_server_response/parse_server_response.h
         development/helpers/parse_server_response/parse_server_response.cpp
+        development/helpers/parse_server_response/parse_user_info/parse_user_info.h
+        development/helpers/parse_server_response/parse_user_info/parse_user_info.cpp
+        development/global_variables/global_variables.h
+        development/global_variables/global_variables.cpp
+        development/helpers/join_a_room/include/join_a_room.h
+        development/helpers/join_a_room/src/join_a_room.cpp
 )

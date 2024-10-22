@@ -223,6 +223,48 @@ CMakeFiles/cpp_network_programming_cli_chat_app.dir/development/helpers/parse_se
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/cpp_network_programming_cli_chat_app.dir/development/helpers/parse_server_response/parse_server_response.cpp.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/o.halukkarakaya/Desktop/dosyalar/code_2024/network_programming/cpp-network-programming-cli-chat-app/development/helpers/parse_server_response/parse_server_response.cpp -o CMakeFiles/cpp_network_programming_cli_chat_app.dir/development/helpers/parse_server_response/parse_server_response.cpp.s
 
+CMakeFiles/cpp_network_programming_cli_chat_app.dir/development/helpers/parse_server_response/parse_user_info/parse_user_info.cpp.o: CMakeFiles/cpp_network_programming_cli_chat_app.dir/flags.make
+CMakeFiles/cpp_network_programming_cli_chat_app.dir/development/helpers/parse_server_response/parse_user_info/parse_user_info.cpp.o: /Users/o.halukkarakaya/Desktop/dosyalar/code_2024/network_programming/cpp-network-programming-cli-chat-app/development/helpers/parse_server_response/parse_user_info/parse_user_info.cpp
+CMakeFiles/cpp_network_programming_cli_chat_app.dir/development/helpers/parse_server_response/parse_user_info/parse_user_info.cpp.o: CMakeFiles/cpp_network_programming_cli_chat_app.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/o.halukkarakaya/Desktop/dosyalar/code_2024/network_programming/cpp-network-programming-cli-chat-app/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/cpp_network_programming_cli_chat_app.dir/development/helpers/parse_server_response/parse_user_info/parse_user_info.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cpp_network_programming_cli_chat_app.dir/development/helpers/parse_server_response/parse_user_info/parse_user_info.cpp.o -MF CMakeFiles/cpp_network_programming_cli_chat_app.dir/development/helpers/parse_server_response/parse_user_info/parse_user_info.cpp.o.d -o CMakeFiles/cpp_network_programming_cli_chat_app.dir/development/helpers/parse_server_response/parse_user_info/parse_user_info.cpp.o -c /Users/o.halukkarakaya/Desktop/dosyalar/code_2024/network_programming/cpp-network-programming-cli-chat-app/development/helpers/parse_server_response/parse_user_info/parse_user_info.cpp
+
+CMakeFiles/cpp_network_programming_cli_chat_app.dir/development/helpers/parse_server_response/parse_user_info/parse_user_info.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/cpp_network_programming_cli_chat_app.dir/development/helpers/parse_server_response/parse_user_info/parse_user_info.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/o.halukkarakaya/Desktop/dosyalar/code_2024/network_programming/cpp-network-programming-cli-chat-app/development/helpers/parse_server_response/parse_user_info/parse_user_info.cpp > CMakeFiles/cpp_network_programming_cli_chat_app.dir/development/helpers/parse_server_response/parse_user_info/parse_user_info.cpp.i
+
+CMakeFiles/cpp_network_programming_cli_chat_app.dir/development/helpers/parse_server_response/parse_user_info/parse_user_info.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/cpp_network_programming_cli_chat_app.dir/development/helpers/parse_server_response/parse_user_info/parse_user_info.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/o.halukkarakaya/Desktop/dosyalar/code_2024/network_programming/cpp-network-programming-cli-chat-app/development/helpers/parse_server_response/parse_user_info/parse_user_info.cpp -o CMakeFiles/cpp_network_programming_cli_chat_app.dir/development/helpers/parse_server_response/parse_user_info/parse_user_info.cpp.s
+
+CMakeFiles/cpp_network_programming_cli_chat_app.dir/development/global_variables/global_variables.cpp.o: CMakeFiles/cpp_network_programming_cli_chat_app.dir/flags.make
+CMakeFiles/cpp_network_programming_cli_chat_app.dir/development/global_variables/global_variables.cpp.o: /Users/o.halukkarakaya/Desktop/dosyalar/code_2024/network_programming/cpp-network-programming-cli-chat-app/development/global_variables/global_variables.cpp
+CMakeFiles/cpp_network_programming_cli_chat_app.dir/development/global_variables/global_variables.cpp.o: CMakeFiles/cpp_network_programming_cli_chat_app.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/o.halukkarakaya/Desktop/dosyalar/code_2024/network_programming/cpp-network-programming-cli-chat-app/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/cpp_network_programming_cli_chat_app.dir/development/global_variables/global_variables.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cpp_network_programming_cli_chat_app.dir/development/global_variables/global_variables.cpp.o -MF CMakeFiles/cpp_network_programming_cli_chat_app.dir/development/global_variables/global_variables.cpp.o.d -o CMakeFiles/cpp_network_programming_cli_chat_app.dir/development/global_variables/global_variables.cpp.o -c /Users/o.halukkarakaya/Desktop/dosyalar/code_2024/network_programming/cpp-network-programming-cli-chat-app/development/global_variables/global_variables.cpp
+
+CMakeFiles/cpp_network_programming_cli_chat_app.dir/development/global_variables/global_variables.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/cpp_network_programming_cli_chat_app.dir/development/global_variables/global_variables.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/o.halukkarakaya/Desktop/dosyalar/code_2024/network_programming/cpp-network-programming-cli-chat-app/development/global_variables/global_variables.cpp > CMakeFiles/cpp_network_programming_cli_chat_app.dir/development/global_variables/global_variables.cpp.i
+
+CMakeFiles/cpp_network_programming_cli_chat_app.dir/development/global_variables/global_variables.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/cpp_network_programming_cli_chat_app.dir/development/global_variables/global_variables.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/o.halukkarakaya/Desktop/dosyalar/code_2024/network_programming/cpp-network-programming-cli-chat-app/development/global_variables/global_variables.cpp -o CMakeFiles/cpp_network_programming_cli_chat_app.dir/development/global_variables/global_variables.cpp.s
+
+CMakeFiles/cpp_network_programming_cli_chat_app.dir/development/helpers/join_a_room/src/join_a_room.cpp.o: CMakeFiles/cpp_network_programming_cli_chat_app.dir/flags.make
+CMakeFiles/cpp_network_programming_cli_chat_app.dir/development/helpers/join_a_room/src/join_a_room.cpp.o: /Users/o.halukkarakaya/Desktop/dosyalar/code_2024/network_programming/cpp-network-programming-cli-chat-app/development/helpers/join_a_room/src/join_a_room.cpp
+CMakeFiles/cpp_network_programming_cli_chat_app.dir/development/helpers/join_a_room/src/join_a_room.cpp.o: CMakeFiles/cpp_network_programming_cli_chat_app.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/o.halukkarakaya/Desktop/dosyalar/code_2024/network_programming/cpp-network-programming-cli-chat-app/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/cpp_network_programming_cli_chat_app.dir/development/helpers/join_a_room/src/join_a_room.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cpp_network_programming_cli_chat_app.dir/development/helpers/join_a_room/src/join_a_room.cpp.o -MF CMakeFiles/cpp_network_programming_cli_chat_app.dir/development/helpers/join_a_room/src/join_a_room.cpp.o.d -o CMakeFiles/cpp_network_programming_cli_chat_app.dir/development/helpers/join_a_room/src/join_a_room.cpp.o -c /Users/o.halukkarakaya/Desktop/dosyalar/code_2024/network_programming/cpp-network-programming-cli-chat-app/development/helpers/join_a_room/src/join_a_room.cpp
+
+CMakeFiles/cpp_network_programming_cli_chat_app.dir/development/helpers/join_a_room/src/join_a_room.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/cpp_network_programming_cli_chat_app.dir/development/helpers/join_a_room/src/join_a_room.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/o.halukkarakaya/Desktop/dosyalar/code_2024/network_programming/cpp-network-programming-cli-chat-app/development/helpers/join_a_room/src/join_a_room.cpp > CMakeFiles/cpp_network_programming_cli_chat_app.dir/development/helpers/join_a_room/src/join_a_room.cpp.i
+
+CMakeFiles/cpp_network_programming_cli_chat_app.dir/development/helpers/join_a_room/src/join_a_room.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/cpp_network_programming_cli_chat_app.dir/development/helpers/join_a_room/src/join_a_room.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/o.halukkarakaya/Desktop/dosyalar/code_2024/network_programming/cpp-network-programming-cli-chat-app/development/helpers/join_a_room/src/join_a_room.cpp -o CMakeFiles/cpp_network_programming_cli_chat_app.dir/development/helpers/join_a_room/src/join_a_room.cpp.s
+
 # Object files for target cpp_network_programming_cli_chat_app
 cpp_network_programming_cli_chat_app_OBJECTS = \
 "CMakeFiles/cpp_network_programming_cli_chat_app.dir/main.cpp.o" \
@@ -235,7 +277,10 @@ cpp_network_programming_cli_chat_app_OBJECTS = \
 "CMakeFiles/cpp_network_programming_cli_chat_app.dir/development/helpers/get_ip_adress/src/getIpAdress.cpp.o" \
 "CMakeFiles/cpp_network_programming_cli_chat_app.dir/models/message/src/message.cpp.o" \
 "CMakeFiles/cpp_network_programming_cli_chat_app.dir/development/helpers/send_to_ip/src/sendToIp.cpp.o" \
-"CMakeFiles/cpp_network_programming_cli_chat_app.dir/development/helpers/parse_server_response/parse_server_response.cpp.o"
+"CMakeFiles/cpp_network_programming_cli_chat_app.dir/development/helpers/parse_server_response/parse_server_response.cpp.o" \
+"CMakeFiles/cpp_network_programming_cli_chat_app.dir/development/helpers/parse_server_response/parse_user_info/parse_user_info.cpp.o" \
+"CMakeFiles/cpp_network_programming_cli_chat_app.dir/development/global_variables/global_variables.cpp.o" \
+"CMakeFiles/cpp_network_programming_cli_chat_app.dir/development/helpers/join_a_room/src/join_a_room.cpp.o"
 
 # External object files for target cpp_network_programming_cli_chat_app
 cpp_network_programming_cli_chat_app_EXTERNAL_OBJECTS =
@@ -251,9 +296,12 @@ cpp_network_programming_cli_chat_app: CMakeFiles/cpp_network_programming_cli_cha
 cpp_network_programming_cli_chat_app: CMakeFiles/cpp_network_programming_cli_chat_app.dir/models/message/src/message.cpp.o
 cpp_network_programming_cli_chat_app: CMakeFiles/cpp_network_programming_cli_chat_app.dir/development/helpers/send_to_ip/src/sendToIp.cpp.o
 cpp_network_programming_cli_chat_app: CMakeFiles/cpp_network_programming_cli_chat_app.dir/development/helpers/parse_server_response/parse_server_response.cpp.o
+cpp_network_programming_cli_chat_app: CMakeFiles/cpp_network_programming_cli_chat_app.dir/development/helpers/parse_server_response/parse_user_info/parse_user_info.cpp.o
+cpp_network_programming_cli_chat_app: CMakeFiles/cpp_network_programming_cli_chat_app.dir/development/global_variables/global_variables.cpp.o
+cpp_network_programming_cli_chat_app: CMakeFiles/cpp_network_programming_cli_chat_app.dir/development/helpers/join_a_room/src/join_a_room.cpp.o
 cpp_network_programming_cli_chat_app: CMakeFiles/cpp_network_programming_cli_chat_app.dir/build.make
 cpp_network_programming_cli_chat_app: CMakeFiles/cpp_network_programming_cli_chat_app.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/o.halukkarakaya/Desktop/dosyalar/code_2024/network_programming/cpp-network-programming-cli-chat-app/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX executable cpp_network_programming_cli_chat_app"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/o.halukkarakaya/Desktop/dosyalar/code_2024/network_programming/cpp-network-programming-cli-chat-app/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Linking CXX executable cpp_network_programming_cli_chat_app"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/cpp_network_programming_cli_chat_app.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

@@ -19,6 +19,11 @@ std::vector<std::string> parse_server_response( const std::string& response )
 
     // Virgül ile ayrılmış değerleri al
     while (std::getline(ss, token, ',')) {
+        // Boşlukları ve tırnak işaretlerini temizle
+        token.erase(std::remove_if(token.begin(), token.end(), [](unsigned char c) {
+            return std::isspace(c) || c == '\"'; // Fazla boşlukları ve tırnak işaretlerini temizle
+        }), token.end());
+
         if (!token.empty()) { // Boş değerleri atla
             values.push_back(token);
         }

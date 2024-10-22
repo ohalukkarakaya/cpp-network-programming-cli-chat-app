@@ -6,16 +6,19 @@
 #include <string>
 #include <vector>
 
+#include "../../../development/global_variables/global_variables.h"
+
 #include "../../../development/helpers/send_to_ip/include/sendToIp.h"
 #include "../../message/include/message.h"
 #include "../../room_member/include/room_member.h"
 
 class Room {
 public:
-  Room(const std::string &id);
+    Room() : roomId("") {}
 
-  void userJoined(const std::string &mainUserId, const std::string &userId,
-                  const std::string &userIp);
+  void setRoomId(std::string &roomId);
+  void notifyUsersOnJoin( std::string &userIp );
+  void userJoined(const std::string &userId, const std::string &userIp, const bool shouldGiveNotification = true);
   void userLeft(const std::string &userId);
   void addMessage(const std::string &senderId, const std::string &content);
   void sendMessage(const std::string &senderId, const std::string &content);

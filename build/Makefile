@@ -153,6 +153,30 @@ development/get_room_id/src/getRoomId.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpp_network_programming_cli_chat_app.dir/build.make CMakeFiles/cpp_network_programming_cli_chat_app.dir/development/get_room_id/src/getRoomId.cpp.s
 .PHONY : development/get_room_id/src/getRoomId.cpp.s
 
+development/global_variables/global_variables.o: development/global_variables/global_variables.cpp.o
+.PHONY : development/global_variables/global_variables.o
+
+# target to build an object file
+development/global_variables/global_variables.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpp_network_programming_cli_chat_app.dir/build.make CMakeFiles/cpp_network_programming_cli_chat_app.dir/development/global_variables/global_variables.cpp.o
+.PHONY : development/global_variables/global_variables.cpp.o
+
+development/global_variables/global_variables.i: development/global_variables/global_variables.cpp.i
+.PHONY : development/global_variables/global_variables.i
+
+# target to preprocess a source file
+development/global_variables/global_variables.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpp_network_programming_cli_chat_app.dir/build.make CMakeFiles/cpp_network_programming_cli_chat_app.dir/development/global_variables/global_variables.cpp.i
+.PHONY : development/global_variables/global_variables.cpp.i
+
+development/global_variables/global_variables.s: development/global_variables/global_variables.cpp.s
+.PHONY : development/global_variables/global_variables.s
+
+# target to generate assembly for a file
+development/global_variables/global_variables.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpp_network_programming_cli_chat_app.dir/build.make CMakeFiles/cpp_network_programming_cli_chat_app.dir/development/global_variables/global_variables.cpp.s
+.PHONY : development/global_variables/global_variables.cpp.s
+
 development/helpers/get_ip_adress/src/getIpAdress.o: development/helpers/get_ip_adress/src/getIpAdress.cpp.o
 .PHONY : development/helpers/get_ip_adress/src/getIpAdress.o
 
@@ -201,6 +225,30 @@ development/helpers/getch/src/getch.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpp_network_programming_cli_chat_app.dir/build.make CMakeFiles/cpp_network_programming_cli_chat_app.dir/development/helpers/getch/src/getch.cpp.s
 .PHONY : development/helpers/getch/src/getch.cpp.s
 
+development/helpers/join_a_room/src/join_a_room.o: development/helpers/join_a_room/src/join_a_room.cpp.o
+.PHONY : development/helpers/join_a_room/src/join_a_room.o
+
+# target to build an object file
+development/helpers/join_a_room/src/join_a_room.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpp_network_programming_cli_chat_app.dir/build.make CMakeFiles/cpp_network_programming_cli_chat_app.dir/development/helpers/join_a_room/src/join_a_room.cpp.o
+.PHONY : development/helpers/join_a_room/src/join_a_room.cpp.o
+
+development/helpers/join_a_room/src/join_a_room.i: development/helpers/join_a_room/src/join_a_room.cpp.i
+.PHONY : development/helpers/join_a_room/src/join_a_room.i
+
+# target to preprocess a source file
+development/helpers/join_a_room/src/join_a_room.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpp_network_programming_cli_chat_app.dir/build.make CMakeFiles/cpp_network_programming_cli_chat_app.dir/development/helpers/join_a_room/src/join_a_room.cpp.i
+.PHONY : development/helpers/join_a_room/src/join_a_room.cpp.i
+
+development/helpers/join_a_room/src/join_a_room.s: development/helpers/join_a_room/src/join_a_room.cpp.s
+.PHONY : development/helpers/join_a_room/src/join_a_room.s
+
+# target to generate assembly for a file
+development/helpers/join_a_room/src/join_a_room.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpp_network_programming_cli_chat_app.dir/build.make CMakeFiles/cpp_network_programming_cli_chat_app.dir/development/helpers/join_a_room/src/join_a_room.cpp.s
+.PHONY : development/helpers/join_a_room/src/join_a_room.cpp.s
+
 development/helpers/parse_server_response/parse_server_response.o: development/helpers/parse_server_response/parse_server_response.cpp.o
 .PHONY : development/helpers/parse_server_response/parse_server_response.o
 
@@ -224,6 +272,30 @@ development/helpers/parse_server_response/parse_server_response.s: development/h
 development/helpers/parse_server_response/parse_server_response.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpp_network_programming_cli_chat_app.dir/build.make CMakeFiles/cpp_network_programming_cli_chat_app.dir/development/helpers/parse_server_response/parse_server_response.cpp.s
 .PHONY : development/helpers/parse_server_response/parse_server_response.cpp.s
+
+development/helpers/parse_server_response/parse_user_info/parse_user_info.o: development/helpers/parse_server_response/parse_user_info/parse_user_info.cpp.o
+.PHONY : development/helpers/parse_server_response/parse_user_info/parse_user_info.o
+
+# target to build an object file
+development/helpers/parse_server_response/parse_user_info/parse_user_info.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpp_network_programming_cli_chat_app.dir/build.make CMakeFiles/cpp_network_programming_cli_chat_app.dir/development/helpers/parse_server_response/parse_user_info/parse_user_info.cpp.o
+.PHONY : development/helpers/parse_server_response/parse_user_info/parse_user_info.cpp.o
+
+development/helpers/parse_server_response/parse_user_info/parse_user_info.i: development/helpers/parse_server_response/parse_user_info/parse_user_info.cpp.i
+.PHONY : development/helpers/parse_server_response/parse_user_info/parse_user_info.i
+
+# target to preprocess a source file
+development/helpers/parse_server_response/parse_user_info/parse_user_info.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpp_network_programming_cli_chat_app.dir/build.make CMakeFiles/cpp_network_programming_cli_chat_app.dir/development/helpers/parse_server_response/parse_user_info/parse_user_info.cpp.i
+.PHONY : development/helpers/parse_server_response/parse_user_info/parse_user_info.cpp.i
+
+development/helpers/parse_server_response/parse_user_info/parse_user_info.s: development/helpers/parse_server_response/parse_user_info/parse_user_info.cpp.s
+.PHONY : development/helpers/parse_server_response/parse_user_info/parse_user_info.s
+
+# target to generate assembly for a file
+development/helpers/parse_server_response/parse_user_info/parse_user_info.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpp_network_programming_cli_chat_app.dir/build.make CMakeFiles/cpp_network_programming_cli_chat_app.dir/development/helpers/parse_server_response/parse_user_info/parse_user_info.cpp.s
+.PHONY : development/helpers/parse_server_response/parse_user_info/parse_user_info.cpp.s
 
 development/helpers/random_bytes/src/random_bytes.o: development/helpers/random_bytes/src/random_bytes.cpp.o
 .PHONY : development/helpers/random_bytes/src/random_bytes.o
@@ -405,15 +477,24 @@ help:
 	@echo "... development/get_room_id/src/getRoomId.o"
 	@echo "... development/get_room_id/src/getRoomId.i"
 	@echo "... development/get_room_id/src/getRoomId.s"
+	@echo "... development/global_variables/global_variables.o"
+	@echo "... development/global_variables/global_variables.i"
+	@echo "... development/global_variables/global_variables.s"
 	@echo "... development/helpers/get_ip_adress/src/getIpAdress.o"
 	@echo "... development/helpers/get_ip_adress/src/getIpAdress.i"
 	@echo "... development/helpers/get_ip_adress/src/getIpAdress.s"
 	@echo "... development/helpers/getch/src/getch.o"
 	@echo "... development/helpers/getch/src/getch.i"
 	@echo "... development/helpers/getch/src/getch.s"
+	@echo "... development/helpers/join_a_room/src/join_a_room.o"
+	@echo "... development/helpers/join_a_room/src/join_a_room.i"
+	@echo "... development/helpers/join_a_room/src/join_a_room.s"
 	@echo "... development/helpers/parse_server_response/parse_server_response.o"
 	@echo "... development/helpers/parse_server_response/parse_server_response.i"
 	@echo "... development/helpers/parse_server_response/parse_server_response.s"
+	@echo "... development/helpers/parse_server_response/parse_user_info/parse_user_info.o"
+	@echo "... development/helpers/parse_server_response/parse_user_info/parse_user_info.i"
+	@echo "... development/helpers/parse_server_response/parse_user_info/parse_user_info.s"
 	@echo "... development/helpers/random_bytes/src/random_bytes.o"
 	@echo "... development/helpers/random_bytes/src/random_bytes.i"
 	@echo "... development/helpers/random_bytes/src/random_bytes.s"

@@ -2,35 +2,48 @@
 
 #include "../include/room.h"
 
-Room::Room(const std::string &id) : roomId(id) {}
+void Room::setRoomId(std::string &newRoomId)
+{
+    roomId = newRoomId;
+}
 
-void Room::userJoined(const std::string &mainUserId, const std::string &userId,
-                      const std::string &userIp) {
-  std::string message = userId + " has joined the chat.";
-  for (const auto &member : members) {
-    if (member.getUserId() != userId) {
-      sendToIp(member.getUserIp(), message, "notification");
+void Room::notifyUsersOnJoin( std::string &userIp )
+{
+    std::string message = "{userId: " + mainUserId + "," + "userIp: " + userIp + "}";
+    for( const auto &member : members )
+    {
+        if(member.getUserId() != mainUserId)
+        {
+            sendToIp(member.getUserIp(), message, "NOTIFICATION");
+        }
     }
-  }
+}
 
+void Room::userJoined(const std::string &userId, const std::string &userIp, const bool shouldGiveNotification)
+{
   members.emplace_back(userId, userIp);
-  if (mainUserId != userId) {
-    std::cout << "\033[33m" << userId << "\033[1;34m" << " joined chat in room "
-              << "\033[33m" << roomId << "\033[0m" << std::endl;
+  if (mainUserId != userId && shouldGiveNotification)
+  {
+    std::cout << "\033[33m" << userId << "\033[1;34m" << " joined chat in room " << "\033[33m" << roomId << "\033[0m" << std::endl;
   }
 }
 
-void Room::userLeft(const std::string &userId) {
-  auto it = std::remove_if(members.begin(), members.end(),
-                           [&userId](const RoomMember &member) {
-                             return member.getUserId() == userId;
-                           });
+void Room::userLeft(const std::string &userId)
+{
+  auto it = std::remove_if(
+   members.begin(), members.end(),
+   [&userId](const RoomMember &member)
+   {
+     return member.getUserId() == userId;
+   });
 
-  if (it != members.end()) {
+  if (it != members.end())
+  {
     members.erase(it, members.end());
     std::cout << userId << " left chat in room " << roomId << std::endl;
 
-    if (members.empty()) {
+    if ( members.empty() )
+    {
       std::cout << "Room " << roomId << " is now empty and will be deleted."
                 << std::endl;
     }
