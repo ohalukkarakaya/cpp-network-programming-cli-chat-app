@@ -16,7 +16,7 @@ void process_incoming_messages( std::string& ipAddress)
     }
 
     // Portu tekrar kullanabilmek için ayarları yap
-    if (setsockopt(server_fd, SOL_SOCKET, SO_REUSEADDR | SO_REUSEPORT, &opt, sizeof(opt)))
+    if (setsockopt(server_fd, SOL_SOCKET, SO_REUSEADDR, &opt, sizeof(opt)))
     {
         perror("Setsockopt failed");
         close(server_fd);
@@ -48,6 +48,7 @@ void process_incoming_messages( std::string& ipAddress)
 
     while ( running )
     {
+        std::cout << "- Listening for incoming messages on " << ipAddress << ":" << LISTEN_PORT << std::endl;
         if ((new_socket = accept(server_fd, (struct sockaddr*)&address, (socklen_t*)&addrlen)) < 0)
         {
             perror("Accept failed");

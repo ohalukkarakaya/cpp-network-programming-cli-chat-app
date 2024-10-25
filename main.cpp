@@ -10,6 +10,8 @@
 #define BUFFER_SIZE 1024
 
 int main() {
+  running = true;
+
   mainUserId = generateRandomBytesHex(10);
   std::string serverIp = "127.0.0.1";
   std::string ipAdress = getIPAddress();

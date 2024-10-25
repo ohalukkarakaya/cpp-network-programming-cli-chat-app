@@ -8,6 +8,6 @@
 #include <iostream>
 #include "../../global_variables/global_variables.h"
 
-void signalHandler( int signum );
+void signal_handler( int signum );
 
 #endif //SIGNAL_HANDLER_H
