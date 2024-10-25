@@ -2,24 +2,39 @@
 
 void process_incoming_messages(std::string& ipAddress)
 {
+#ifdef _WIN32
+    // Windows için Winsock başlatma
+    WSADATA wsaData;
+    if (WSAStartup(MAKEWORD(2, 2), &wsaData) != 0) {
+        std::cerr << "WSAStartup failed" << std::endl;
+        return;
+    }
+#endif
+
     int server_fd, new_socket;
     struct sockaddr_in address;
     int opt = 1;
-    int addrlen = sizeof(address);
+    socklen_t addrlen = sizeof(address);  // `socklen_t` olarak ayarlandı
     char buffer[1024] = {0};
 
     // TCP soketi oluştur
-    if ((server_fd = socket(AF_INET, SOCK_STREAM, 0)) == 0)
+    if ((server_fd = socket(AF_INET, SOCK_STREAM, 0)) == INVALID_SOCKET)
     {
         perror("Socket failed");
+#ifdef _WIN32
+        WSACleanup();
+#endif
         return;
     }
 
     // Portu tekrar kullanabilmek için ayarları yap
-    if (setsockopt(server_fd, SOL_SOCKET, SO_REUSEADDR, &opt, sizeof(opt)))
+    if (setsockopt(server_fd, SOL_SOCKET, SO_REUSEADDR, (char*)&opt, sizeof(opt)) == SOCKET_ERROR)
     {
         perror("Setsockopt failed");
-        close(server_fd);
+        closesocket(server_fd);
+#ifdef _WIN32
+        WSACleanup();
+#endif
         return;
     }
 
@@ -29,18 +44,24 @@ void process_incoming_messages(std::string& ipAddress)
     address.sin_port = htons(LISTEN_PORT);
 
     // Soketi belirtilen IP ve PORT'a bağla
-    if (bind(server_fd, (struct sockaddr*)&address, sizeof(address)) < 0)
+    if (bind(server_fd, (struct sockaddr*)&address, sizeof(address)) == SOCKET_ERROR)
     {
         perror("Bind failed");
-        close(server_fd);
+        closesocket(server_fd);
+#ifdef _WIN32
+        WSACleanup();
+#endif
         return;
     }
 
     // Gelen bağlantıları dinlemeye başla
-    if (listen(server_fd, 3) < 0)
+    if (listen(server_fd, 3) == SOCKET_ERROR)
     {
         perror("Listen failed");
-        close(server_fd);
+        closesocket(server_fd);
+#ifdef _WIN32
+        WSACleanup();
+#endif
         return;
     }
 
@@ -71,23 +92,28 @@ void process_incoming_messages(std::string& ipAddress)
         // Bağlantı var mı kontrol et
         if (FD_ISSET(server_fd, &readfds))
         {
-            if ((new_socket = accept(server_fd, (struct sockaddr*)&address, (socklen_t*)&addrlen)) < 0)
+            if ((new_socket = accept(server_fd, (struct sockaddr*)&address, &addrlen)) == INVALID_SOCKET)
             {
                 perror("Accept failed");
                 break;
             }
 
-            int valread = read(new_socket, buffer, 1024);
+            int valread = recv(new_socket, buffer, 1024, 0);
             if (valread > 0)
             {
                 std::cout << "Received message: " << buffer << std::endl;
             }
 
             // İşlem tamamlandıktan sonra bağlantıyı kapat
-            close(new_socket);
+            closesocket(new_socket);
         }
     }
 
-    // Ana socketi kapat
-    close(server_fd);
+    // Ana soketi kapat
+    closesocket(server_fd);
+
+#ifdef _WIN32
+    // Winsock sonlandırma
+    WSACleanup();
+#endif
 }
