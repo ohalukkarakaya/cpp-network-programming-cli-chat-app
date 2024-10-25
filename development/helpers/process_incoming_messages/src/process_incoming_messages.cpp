@@ -3,7 +3,7 @@
 void process_incoming_messages(std::string& ipAddress)
 {
 #ifdef _WIN32
-    // Windows için Winsock başlatma
+    // Start for windows
     WSADATA wsaData;
     if (WSAStartup(MAKEWORD(2, 2), &wsaData) != 0) {
         std::cerr << "WSAStartup failed" << std::endl;
@@ -17,7 +17,7 @@ void process_incoming_messages(std::string& ipAddress)
     socklen_t addrlen = sizeof(address);  // `socklen_t` olarak ayarlandı
     char buffer[1024] = {0};
 
-    // TCP soketi oluştur
+    // Create TCP socket
     if ((server_fd = socket(AF_INET, SOCK_STREAM, 0)) == INVALID_SOCKET)
     {
         perror("Socket failed");
@@ -27,7 +27,7 @@ void process_incoming_messages(std::string& ipAddress)
         return;
     }
 
-    // Portu tekrar kullanabilmek için ayarları yap
+    // do settings to reuse port
     if (setsockopt(server_fd, SOL_SOCKET, SO_REUSEADDR, (char*)&opt, sizeof(opt)) == SOCKET_ERROR)
     {
         perror("Setsockopt failed");
@@ -38,12 +38,12 @@ void process_incoming_messages(std::string& ipAddress)
         return;
     }
 
-    // Bağlantı adres bilgilerini ayarla
+    // set connection adress info
     address.sin_family = AF_INET;
     address.sin_addr.s_addr = inet_addr(ipAddress.c_str());
     address.sin_port = htons(LISTEN_PORT);
 
-    // Soketi belirtilen IP ve PORT'a bağla
+    // connect socket to defined port and ip
     if (bind(server_fd, (struct sockaddr*)&address, sizeof(address)) == SOCKET_ERROR)
     {
         perror("Bind failed");
@@ -54,7 +54,7 @@ void process_incoming_messages(std::string& ipAddress)
         return;
     }
 
-    // Gelen bağlantıları dinlemeye başla
+    // start to listen comming connections
     if (listen(server_fd, 3) == SOCKET_ERROR)
     {
         perror("Listen failed");
@@ -73,9 +73,8 @@ void process_incoming_messages(std::string& ipAddress)
         FD_ZERO(&readfds);
         FD_SET(server_fd, &readfds);
 
-        // Zaman aşımı yapısı
         struct timeval timeout;
-        timeout.tv_sec = 1;  // 1 saniye bekle
+        timeout.tv_sec = 1;
         timeout.tv_usec = 0;
 
         int activity = select(server_fd + 1, &readfds, NULL, NULL, &timeout);
@@ -86,10 +85,8 @@ void process_incoming_messages(std::string& ipAddress)
             break;
         }
 
-        // `isRunning` kontrolü - false ise döngüden çık
         if (!isRunning) break;
 
-        // Bağlantı var mı kontrol et
         if (FD_ISSET(server_fd, &readfds))
         {
             if ((new_socket = accept(server_fd, (struct sockaddr*)&address, &addrlen)) == INVALID_SOCKET)
@@ -104,12 +101,11 @@ void process_incoming_messages(std::string& ipAddress)
                 std::cout << "Received message: " << buffer << std::endl;
             }
 
-            // İşlem tamamlandıktan sonra bağlantıyı kapat
             closesocket(new_socket);
         }
     }
 
-    // Ana soketi kapat
+    // close main socket
     closesocket(server_fd);
 
 #ifdef _WIN32
