@@ -11,3 +11,5 @@ Room selected_room;
 Room& getSelectedRoom() {
     return selected_room;
 }
+
+std::string mainUserId;

@@ -40,4 +40,11 @@ add_executable(
         development/global_variables/global_variables.cpp
         development/helpers/join_a_room/include/join_a_room.h
         development/helpers/join_a_room/src/join_a_room.cpp
+        models/command/src/command.cpp
+        development/helpers/parse_command/include/parse_command.h
+        models/request_data/include/request_data.h
+        models/request_data/src/request_data.cpp
+        development/helpers/parse_command/src/parse_command.cpp
+        development/helpers/get_current_time/include/get_current_time.h
+        development/helpers/get_current_time/src/get_current_time.cpp
 )

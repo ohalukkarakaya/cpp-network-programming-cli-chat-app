@@ -8,10 +8,12 @@
 #define PORT 9090
 #define BUFFER_SIZE 1024
 
+#include <string>
+
 class Room;
 
-extern Room& getSelectedRoom();
+extern Room &getSelectedRoom();
 extern std::string mainUserId;
 inline volatile bool running;
 
-#endif //CPP_NETWORK_PROGRAMMING_CLI_CHAT_APP_GLOBAL_VARIABLES_H
+#endif // CPP_NETWORK_PROGRAMMING_CLI_CHAT_APP_GLOBAL_VARIABLES_H

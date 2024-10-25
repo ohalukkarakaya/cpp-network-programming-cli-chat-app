@@ -1,14 +1,11 @@
-#include <iostream>
-#include <thread>
-#include <vector>
-#include <unistd.h> // close() için
 #include <cstring>  // memset() için
+#include <unistd.h> // close() için
 
 #include "development/global_variables/global_variables.h"
 
 #include "development/helpers/get_ip_adress/include/getIpAdress.h"
-#include "development/helpers/random_bytes/include/random_bytes.h"
 #include "development/helpers/join_a_room/include/join_a_room.h"
+#include "development/helpers/random_bytes/include/random_bytes.h"
 
 #define BUFFER_SIZE 1024
 
@@ -19,10 +16,11 @@ int main() {
 
   join_a_room(mainUserId, serverIp, ipAdress);
 
-  // to listen incoming
-  //std::thread messageThread(processIncomingMessages, sock);
+  // TO DO
+  //  to listen incoming
+  // std::thread messageThread(processIncomingMessages, sock);
 
   // end thread
-  //messageThread.join(); // Thread'in tamamlanmasını bekle
+  // messageThread.join(); // TO DO
   return 0;
 }
