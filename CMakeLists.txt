@@ -32,23 +32,34 @@ add_executable(
         
         development/helpers/send_to_ip/include/sendToIp.h
         development/helpers/send_to_ip/src/sendToIp.cpp
+
         development/helpers/parse_server_response/parse_server_response.h
         development/helpers/parse_server_response/parse_server_response.cpp
+
         development/helpers/parse_server_response/parse_user_info/parse_user_info.h
         development/helpers/parse_server_response/parse_user_info/parse_user_info.cpp
+
         development/global_variables/global_variables.h
         development/global_variables/global_variables.cpp
+
         development/helpers/join_a_room/include/join_a_room.h
         development/helpers/join_a_room/src/join_a_room.cpp
+
+        models/command/include/command.h
         models/command/src/command.cpp
+
         development/helpers/parse_command/include/parse_command.h
+        development/helpers/parse_command/src/parse_command.cpp
+
         models/request_data/include/request_data.h
         models/request_data/src/request_data.cpp
-        development/helpers/parse_command/src/parse_command.cpp
+
         development/helpers/get_current_time/include/get_current_time.h
         development/helpers/get_current_time/src/get_current_time.cpp
+
         development/helpers/process_incoming_messages/include/process_incoming_messages.h
         development/helpers/process_incoming_messages/src/process_incoming_messages.cpp
+        
         development/helpers/signal_handler/signal_handler.h
         development/helpers/signal_handler/signal_handler.cpp
 )
