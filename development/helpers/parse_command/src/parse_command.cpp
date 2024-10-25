@@ -2,11 +2,12 @@
 
 RequestData* parse_request_data( std::string& rawRequest )
 {
-    std::string cmd, senderId;
+    std::string cmd, senderId, message;
 
-    // Kalan kısmı '/' karakterlerine göre parçala
+    // parse command, sender id and message with '/'
     size_t firstSlash  = rawRequest.find('/');
     size_t secondSlash = rawRequest.find('/',  firstSlash  + 1);
+    size_t thirdSlash = rawRequest.find('/',  secondSlash  + 1);
 
     if (firstSlash == std::string::npos || secondSlash == std::string::npos)
     {
@@ -16,9 +17,10 @@ RequestData* parse_request_data( std::string& rawRequest )
     }
 
     cmd = rawRequest.substr(0, firstSlash);
-
     Command command = getCommandType( cmd );
+
     senderId = rawRequest.substr(firstSlash + 1, secondSlash - firstSlash - 1);
+    message = rawRequest.substr(secondSlash +1, thirdSlash - secondSlash - 1);
     std::string commandTime = getCurrentTimeAsString();
 
     std::cout << "request received: " << rawRequest << std::endl;

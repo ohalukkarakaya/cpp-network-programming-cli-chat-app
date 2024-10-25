@@ -47,4 +47,6 @@ add_executable(
         development/helpers/parse_command/src/parse_command.cpp
         development/helpers/get_current_time/include/get_current_time.h
         development/helpers/get_current_time/src/get_current_time.cpp
+        development/helpers/process_incoming_messages/include/process_incoming_messages.h
+        development/helpers/process_incoming_messages/src/process_incoming_messages.cpp
 )
