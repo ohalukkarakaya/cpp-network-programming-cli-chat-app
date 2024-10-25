@@ -42,7 +42,7 @@ void process_incoming_messages( std::string& ipAddress)
 
     std::cout << "Listening for incoming messages on " << ipAddress << ":" << LISTEN_PORT << std::endl;
 
-    while (true) {
+    while ( running ) {
         if ((new_socket = accept(server_fd, (struct sockaddr*)&address, (socklen_t*)&addrlen)) < 0) {
             perror("Accept failed");
             close(server_fd);
@@ -56,6 +56,12 @@ void process_incoming_messages( std::string& ipAddress)
 
         // İşlem tamamlandıktan sonra bağlantıyı kapat
         close(new_socket);
+
+        if( !running )
+        {
+            close(new_socket);
+            break;
+        };
     }
 
     // Ana socketi kapat

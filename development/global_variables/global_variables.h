@@ -8,6 +8,9 @@
 #define PORT 9090
 #define BUFFER_SIZE 1024
 
+#define BOLD_RED "\033[1;31m"
+#define RESET "\033[0m"
+
 #include <string>
 
 class Room;

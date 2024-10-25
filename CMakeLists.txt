@@ -49,4 +49,6 @@ add_executable(
         development/helpers/get_current_time/src/get_current_time.cpp
         development/helpers/process_incoming_messages/include/process_incoming_messages.h
         development/helpers/process_incoming_messages/src/process_incoming_messages.cpp
+        development/helpers/signal_handler/signal_handler.h
+        development/helpers/signal_handler/signal_handler.cpp
 )
