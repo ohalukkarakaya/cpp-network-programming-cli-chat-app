@@ -1,6 +1,6 @@
 #include "../include/process_incoming_messages.h"
 
-void process_incoming_messages( std::string& ipAddress)
+void process_incoming_messages(std::string& ipAddress)
 {
     int server_fd, new_socket;
     struct sockaddr_in address;
@@ -8,7 +8,7 @@ void process_incoming_messages( std::string& ipAddress)
     int addrlen = sizeof(address);
     char buffer[1024] = {0};
 
-    // TCP socket oluştur
+    // TCP soketi oluştur
     if ((server_fd = socket(AF_INET, SOCK_STREAM, 0)) == 0)
     {
         perror("Socket failed");
@@ -25,7 +25,7 @@ void process_incoming_messages( std::string& ipAddress)
 
     // Bağlantı adres bilgilerini ayarla
     address.sin_family = AF_INET;
-    address.sin_addr.s_addr = inet_addr(ipAddress.c_str()); // IP adresini al
+    address.sin_addr.s_addr = inet_addr(ipAddress.c_str());
     address.sin_port = htons(LISTEN_PORT);
 
     // Soketi belirtilen IP ve PORT'a bağla
@@ -46,30 +46,46 @@ void process_incoming_messages( std::string& ipAddress)
 
     std::cout << "Listening for incoming messages on " << ipAddress << ":" << LISTEN_PORT << std::endl;
 
-    while ( running )
+    while (isRunning)
     {
-        std::cout << "- Listening for incoming messages on " << ipAddress << ":" << LISTEN_PORT << std::endl;
-        if ((new_socket = accept(server_fd, (struct sockaddr*)&address, (socklen_t*)&addrlen)) < 0)
-        {
-            perror("Accept failed");
-            close(server_fd);
-            return;
-        }
+        fd_set readfds;
+        FD_ZERO(&readfds);
+        FD_SET(server_fd, &readfds);
 
-        int valread = read(new_socket, buffer, 1024);
-        if (valread > 0)
-        {
-            std::cout << "Received message: " << buffer << std::endl;
-        }
+        // Zaman aşımı yapısı
+        struct timeval timeout;
+        timeout.tv_sec = 1;  // 1 saniye bekle
+        timeout.tv_usec = 0;
 
-        // İşlem tamamlandıktan sonra bağlantıyı kapat
-        close(new_socket);
+        int activity = select(server_fd + 1, &readfds, NULL, NULL, &timeout);
 
-        if( !running )
+        if (activity < 0 && errno != EINTR)
         {
-            close(new_socket);
+            perror("Select error");
             break;
-        };
+        }
+
+        // `isRunning` kontrolü - false ise döngüden çık
+        if (!isRunning) break;
+
+        // Bağlantı var mı kontrol et
+        if (FD_ISSET(server_fd, &readfds))
+        {
+            if ((new_socket = accept(server_fd, (struct sockaddr*)&address, (socklen_t*)&addrlen)) < 0)
+            {
+                perror("Accept failed");
+                break;
+            }
+
+            int valread = read(new_socket, buffer, 1024);
+            if (valread > 0)
+            {
+                std::cout << "Received message: " << buffer << std::endl;
+            }
+
+            // İşlem tamamlandıktan sonra bağlantıyı kapat
+            close(new_socket);
+        }
     }
 
     // Ana socketi kapat

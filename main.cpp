@@ -1,6 +1,7 @@
 #include <thread>
 
 #include "development/global_variables/global_variables.h"
+#include "development/helpers/signal_handler/signal_handler.h"
 
 #include "development/helpers/get_ip_adress/include/getIpAdress.h"
 #include "development/helpers/random_bytes/include/random_bytes.h"
@@ -10,8 +11,9 @@
 #define BUFFER_SIZE 1024
 
 int main() {
-  running = true;
+  isRunning = true;
 
+  signal( SIGINT, signal_handler );
   mainUserId = generateRandomBytesHex(10);
   std::string serverIp = "127.0.0.1";
   std::string ipAdress = getIPAddress();

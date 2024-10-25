@@ -13,3 +13,5 @@ Room& getSelectedRoom() {
 }
 
 std::string mainUserId;
+
+std::atomic<bool> isRunning{true};

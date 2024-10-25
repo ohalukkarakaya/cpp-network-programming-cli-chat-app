@@ -12,7 +12,7 @@ RequestData* parse_request_data( std::string& rawRequest )
     if (firstSlash == std::string::npos || secondSlash == std::string::npos)
     {
         std::cerr << "Missing Parameter" << std::endl;
-        running = false;
+        isRunning = false;
         return new RequestData( UNKNOWN, "", "" );
     }
 

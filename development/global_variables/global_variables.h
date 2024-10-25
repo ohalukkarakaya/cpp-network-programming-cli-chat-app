@@ -17,6 +17,6 @@ class Room;
 
 extern Room &getSelectedRoom();
 extern std::string mainUserId;
-inline volatile bool running;
+extern std::atomic<bool> isRunning;
 
 #endif // CPP_NETWORK_PROGRAMMING_CLI_CHAT_APP_GLOBAL_VARIABLES_H
