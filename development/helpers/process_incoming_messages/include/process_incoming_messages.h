@@ -24,8 +24,6 @@
 #define closesocket close
 #endif
 
-#define LISTEN_PORT 8080
-
 #include "../../../global_variables/global_variables.h"
 #include "../../parse_command/include/parse_command.h"
 

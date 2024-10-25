@@ -23,7 +23,12 @@ int main() {
   // listen incoming messages
    std::thread messageThread(process_incoming_messages, std::ref(ipAdress));
 
-  // end thread
+  // listen user inputs
+  //std::thread inputThread(process_user_input); TODO
+
+  // end threads
   messageThread.join();
+  //inputThread.join(); TODO
+
   return 0;
 }

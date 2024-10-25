@@ -14,7 +14,7 @@ void Room::notifyUsersOnJoin( std::string &userIp )
     {
         if(member.getUserId() != mainUserId)
         {
-            sendToIp(member.getUserIp(), message, "NOTIFICATION");
+            sendToIp(PORT, member.getUserIp(), message, "NOTIFICATION");
         }
     }
 }
@@ -61,7 +61,7 @@ void Room::sendMessage(const std::string &senderId,
   std::string message = senderId + ": " + content;
   for (const auto &member : members) {
     if (member.getUserId() != senderId) {
-      sendToIp(member.getUserIp(), message);
+      sendToIp(PORT, member.getUserIp(), message);
     }
   }
 }

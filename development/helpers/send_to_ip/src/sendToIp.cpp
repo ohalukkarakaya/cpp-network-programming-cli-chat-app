@@ -1,6 +1,6 @@
 #include "../include/sendToIp.h"
 
-int sendToIp(const std::string &ip, const std::string &message, const std::string &type) {
+int sendToIp(int port, const std::string &ip, const std::string &message, const std::string &type) {
   int sock = socket(AF_INET, SOCK_STREAM, 0);
   if (sock < 0) {
     std::cerr << "Socket creation failed" << std::endl;
@@ -10,7 +10,7 @@ int sendToIp(const std::string &ip, const std::string &message, const std::strin
   sockaddr_in serverAddr{};
   std::memset(&serverAddr, 0, sizeof(serverAddr));
   serverAddr.sin_family = AF_INET;
-  serverAddr.sin_port = htons(9090);
+  serverAddr.sin_port = htons(port);
   inet_pton(AF_INET, ip.c_str(), &serverAddr.sin_addr);
 
     // Sunucu IP adresini ayarla
