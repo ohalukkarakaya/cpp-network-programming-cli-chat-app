@@ -1,5 +1,3 @@
-#include <cstring>
-#include <unistd.h>
 #include <thread>
 
 #include "development/global_variables/global_variables.h"

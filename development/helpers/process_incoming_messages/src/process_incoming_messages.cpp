@@ -9,13 +9,15 @@ void process_incoming_messages( std::string& ipAddress)
     char buffer[1024] = {0};
 
     // TCP socket oluştur
-    if ((server_fd = socket(AF_INET, SOCK_STREAM, 0)) == 0) {
+    if ((server_fd = socket(AF_INET, SOCK_STREAM, 0)) == 0)
+    {
         perror("Socket failed");
         return;
     }
 
     // Portu tekrar kullanabilmek için ayarları yap
-    if (setsockopt(server_fd, SOL_SOCKET, SO_REUSEADDR | SO_REUSEPORT, &opt, sizeof(opt))) {
+    if (setsockopt(server_fd, SOL_SOCKET, SO_REUSEADDR | SO_REUSEPORT, &opt, sizeof(opt)))
+    {
         perror("Setsockopt failed");
         close(server_fd);
         return;
@@ -27,14 +29,16 @@ void process_incoming_messages( std::string& ipAddress)
     address.sin_port = htons(LISTEN_PORT);
 
     // Soketi belirtilen IP ve PORT'a bağla
-    if (bind(server_fd, (struct sockaddr*)&address, sizeof(address)) < 0) {
+    if (bind(server_fd, (struct sockaddr*)&address, sizeof(address)) < 0)
+    {
         perror("Bind failed");
         close(server_fd);
         return;
     }
 
     // Gelen bağlantıları dinlemeye başla
-    if (listen(server_fd, 3) < 0) {
+    if (listen(server_fd, 3) < 0)
+    {
         perror("Listen failed");
         close(server_fd);
         return;
@@ -42,15 +46,18 @@ void process_incoming_messages( std::string& ipAddress)
 
     std::cout << "Listening for incoming messages on " << ipAddress << ":" << LISTEN_PORT << std::endl;
 
-    while ( running ) {
-        if ((new_socket = accept(server_fd, (struct sockaddr*)&address, (socklen_t*)&addrlen)) < 0) {
+    while ( running )
+    {
+        if ((new_socket = accept(server_fd, (struct sockaddr*)&address, (socklen_t*)&addrlen)) < 0)
+        {
             perror("Accept failed");
             close(server_fd);
             return;
         }
 
         int valread = read(new_socket, buffer, 1024);
-        if (valread > 0) {
+        if (valread > 0)
+        {
             std::cout << "Received message: " << buffer << std::endl;
         }
 

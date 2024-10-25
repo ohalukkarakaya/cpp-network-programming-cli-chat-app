@@ -11,6 +11,6 @@
 
 #include "../../parse_command/include/parse_command.h"
 
-void process_incoming_messages( std::string ipAddress );
+void process_incoming_messages( std::string& ipAddress );
 
 #endif //PROCESS_INCOMING_MESSAGES_H
