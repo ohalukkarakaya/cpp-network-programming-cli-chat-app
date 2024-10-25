@@ -98,7 +98,12 @@ void process_incoming_messages(std::string& ipAddress)
             int valread = recv(new_socket, buffer, 1024, 0);
             if (valread > 0)
             {
-                std::cout << "Received message: " << buffer << std::endl;
+                std::string received_message(buffer);
+
+                RequestData* Prequest_data = parse_request_data( received_message );
+                RequestData request_data = *Prequest_data;
+
+                std::cout << "user " << request_data.getSenderId() << " send, " << request_data.getCommand() << " request at " << request_data.getCommandTime() << std::endl;
             }
 
             closesocket(new_socket);

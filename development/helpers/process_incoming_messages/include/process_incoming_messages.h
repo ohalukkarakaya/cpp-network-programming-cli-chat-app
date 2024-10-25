@@ -27,6 +27,8 @@
 #include "../../../global_variables/global_variables.h"
 #include "../../parse_command/include/parse_command.h"
 
+#include "../../../../models/request_data/include/request_data.h"
+
 void process_incoming_messages( std::string& ipAddress );
 
 #endif //PROCESS_INCOMING_MESSAGES_H

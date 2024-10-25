@@ -7,16 +7,18 @@
 
 class RequestData {
 public:
-    RequestData(Command command, std::string senderId, std::string message, std::string commandTime);
+    RequestData(Command command, std::string senderId, std::string senderIp, std::string message, std::string commandTime);
 
     Command& getCommand();
     std::string& getSenderId();
+    std::string& getSenderIp();
     std::string& getMessage();
     std::string& getCommandTime();
 
 private:
     Command command;
     std::string senderId;
+    std::string senderIp;
     std::string message;
     std::string commandTime;
 };
