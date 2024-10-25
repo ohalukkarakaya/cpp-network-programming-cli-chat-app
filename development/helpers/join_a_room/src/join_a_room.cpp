@@ -50,7 +50,7 @@ void join_a_room(const std::string &mainUserId, const std::string &serverIp, std
     for (const auto &user : members) {
         getSelectedRoom().userJoined(user.getUserId(), user.getUserIp(), false);
 
-        std::string user_join_message = "JOINROOM:" + mainUserId + "/" + ipAdress;
+        std::string user_join_message = "JOINROOM:" + mainUserId + "/" + ipAdress + "/";
         int send_notification_sock = sendToIp(LISTEN_PORT, user.getUserIp(), user_join_message, "NOTIFICATION");
         close(send_notification_sock);
     }
