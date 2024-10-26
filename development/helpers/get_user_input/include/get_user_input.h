@@ -9,6 +9,6 @@
 
 #include "../../../global_variables/global_variables.h"
 
-void process_user_input();
+void get_user_input();
 
 #endif //PROCESS_USER_INPUT_H

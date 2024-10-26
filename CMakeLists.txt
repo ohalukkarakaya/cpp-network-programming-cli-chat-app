@@ -62,8 +62,10 @@ add_executable(
 
         development/helpers/signal_handler/signal_handler.h
         development/helpers/signal_handler/signal_handler.cpp
+
         development/helpers/process_incoming_command/include/process_incoming_command.h
         development/helpers/process_incoming_command/src/process_incoming_command.cpp
-        development/helpers/process_user_input/include/process_user_input.h
-        development/helpers/process_user_input/src/process_user_input.cpp
+
+        development/helpers/get_user_input/include/get_user_input.h
+        development/helpers/get_user_input/src/get_user_input.cpp
 )

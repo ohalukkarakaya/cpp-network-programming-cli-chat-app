@@ -1,6 +1,6 @@
-#include "../include/process_user_input.h"
+#include "../include/get_user_input.h"
 
-void process_user_input() {
+void get_user_input() {
     std::string userInput;
 
     while (isRunning) {
@@ -24,11 +24,8 @@ void process_user_input() {
                 std::string type = matches[1].str();
                 std::string input = matches[2].str();
 
-                const std::string greenBold = "\033[1;32m";
-                const std::string reset = "\033[0m";
-
-                std::cout << greenBold << "Type: " << type << reset << std::endl;
-                std::cout << greenBold << "Input: " << input << reset << std::endl;
+                std::cout << BOLD_GREEN << "Type: " << type << RESET << std::endl;
+                std::cout << BOLD_GREEN << "Input: " << input << RESET << std::endl;
 
             } else {
                 std::cout << "Enter a valid message (exp. :M: your message)" << std::endl;
