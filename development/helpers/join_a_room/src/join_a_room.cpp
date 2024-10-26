@@ -61,5 +61,5 @@ void join_a_room(const std::string &mainUserId, const std::string &serverIp, std
     getSelectedRoom().notifyUsersOnJoin(ipAdress);
 
     // Socket kapat
-    close(joinSock);
+    join_socket = joinSock;
 }

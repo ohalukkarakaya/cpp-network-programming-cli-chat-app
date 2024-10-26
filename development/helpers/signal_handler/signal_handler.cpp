@@ -9,4 +9,5 @@ void signal_handler( int signum )
     std::cout << std::endl;
     std::cout << BOLD_RED   << "Signal (" << signum << ") received. Shutting down..." << RESET << std::endl;
     isRunning   =  false;
+    close( join_socket );
 }

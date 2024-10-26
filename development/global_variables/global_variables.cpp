@@ -5,7 +5,6 @@
 #include "../../models/room/include/room.h"
 #include "global_variables.h"
 
-// Global bir Room nesnesi
 Room selected_room;
 
 Room& getSelectedRoom() {
@@ -15,3 +14,5 @@ Room& getSelectedRoom() {
 std::string mainUserId;
 
 std::atomic<bool> isRunning{true};
+
+int join_socket;

@@ -21,4 +21,6 @@ extern Room &getSelectedRoom();
 extern std::string mainUserId;
 extern std::atomic<bool> isRunning;
 
+extern int join_socket;
+
 #endif // CPP_NETWORK_PROGRAMMING_CLI_CHAT_APP_GLOBAL_VARIABLES_H

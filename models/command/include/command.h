@@ -7,4 +7,6 @@ enum Command { MESSAGE, NOTIFICATION, JOINROOM, LEAVEROOM, UPDATEIP, AUDIO, WHIS
 
 Command getCommandType(const std::string &command);
 
+std::string getCommandAsString( Command command );
+
 #endif // COMMAND_H

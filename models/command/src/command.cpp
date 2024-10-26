@@ -15,3 +15,41 @@ Command getCommandType(const std::string &command)
 
     return UNKNOWN;
 }
+
+std::string getCommandAsString(Command command)
+{
+    switch (command) {
+        case MESSAGE: {
+            return "MESSAGE";
+            break;
+        }
+        case NOTIFICATION: {
+            return "NOTIFICATION";
+            break;
+        }
+        case JOINROOM: {
+            return "JOINROOM";
+            break;
+        }
+        case LEAVEROOM: {
+            return "LEAVEROOM";
+            break;
+        }
+        case UPDATEIP: {
+            return "UPDATEIP";
+            break;
+        }
+        case AUDIO: {
+            return "AUDIO";
+            break;
+        }
+        case WHISPER: {
+            return "WHISPER";
+            break;
+        }
+        case UNKNOWN:
+        default:
+            return "UNKNOWN";
+            break;
+    }
+}
