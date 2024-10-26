@@ -25,6 +25,9 @@ public:
 
     // Ses kaydını başlat
     void recordAudioToWav(const std::string& outputFileName, float durationInSeconds);
+private:
+    bool isCommandAvailable(const std::string& command);
+    void installDependency(const std::string& command);
 };
 
 #endif // AUDIO_RECORDER_H

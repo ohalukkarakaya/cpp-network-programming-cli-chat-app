@@ -4,8 +4,42 @@ AudioRecorder::AudioRecorder() {
     // Gerekli başlatmalar burada yapılabilir
 }
 
-void AudioRecorder::recordAudioToWav(const std::string& outputFileName, float durationInSeconds) {
+bool AudioRecorder::isCommandAvailable(const std::string& command) {
 #ifdef _WIN32
+    std::string checkCommand = "where " + command + " > nul 2>&1"; // Windows
+#else
+    std::string checkCommand = "which " + command + " > /dev/null 2>&1"; // Linux ve macOS
+#endif
+    return (system(checkCommand.c_str()) == 0);
+}
+
+void AudioRecorder::installDependency(const std::string& command) {
+#ifdef _WIN32
+    // Windows için bağımlılık kurulum komutları (örneğin Chocolatey)
+    std::string installCommand = "choco install " + command + " -y";
+#elif __linux__
+    // Linux için bağımlılık kurulum komutları (örneğin apt)
+    std::string installCommand = "sudo apt install " + command + " -y";
+#elif __APPLE__
+    // macOS için bağımlılık kurulum komutları (Homebrew)
+    std::string installCommand = "brew install " + command;
+#endif
+    std::cout << "Installing " << command << "..." << std::endl;
+    system(installCommand.c_str());
+}
+
+void AudioRecorder::recordAudioToWav(const std::string& outputFileName, float durationInSeconds) {
+    const std::string soxCommand = "sox"; // Sox bağımlılığını kontrol et
+
+    // Bağımlılığın kurulu olup olmadığını kontrol et
+    if (!isCommandAvailable(soxCommand)) {
+        std::cout << soxCommand << " is not installed. Installing..." << std::endl;
+        installDependency(soxCommand);
+        std::cout << soxCommand << " has been installed." << std::endl;
+    }
+
+#ifdef _WIN32
+    // Windows için ses kaydı
     const int SAMPLE_RATE = 44100;
     const int BITS_PER_SAMPLE = 16;
     const int CHANNELS = 1; // Mono ses
