@@ -103,7 +103,7 @@ void process_incoming_messages(std::string& ipAddress)
                 RequestData* Prequest_data = parse_request_data( received_message );
                 RequestData request_data = *Prequest_data;
 
-                std::cout << "user " << request_data.getSenderId() << " send, " << getCommandAsString( request_data.getCommand() ) << " request at " << request_data.getCommandTime() << std::endl;
+                process_incoming_command( request_data );
             }
 
             closesocket(new_socket);

@@ -40,12 +40,11 @@ void Room::userLeft(const std::string &userId)
   if (it != members.end())
   {
     members.erase(it, members.end());
-    std::cout << userId << " left chat in room " << roomId << std::endl;
+    std::cout << "\033[33m" << userId << BOLD_RED << " left chat in room " << "\033[33m" << roomId << RESET << std::endl;
 
     if ( members.empty() )
     {
-      std::cout << "Room " << roomId << " is now empty and will be deleted."
-                << std::endl;
+      std::cout << BOLD_RED << "Room " << roomId << " is now empty and will be deleted." << RESET << std::endl;
     }
   }
 }

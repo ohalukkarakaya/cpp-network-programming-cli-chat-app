@@ -26,6 +26,7 @@
 
 #include "../../../global_variables/global_variables.h"
 #include "../../parse_command/include/parse_command.h"
+#include "../../process_incoming_command/include/process_incoming_command.h"
 
 #include "../../../../models/request_data/include/request_data.h"
 

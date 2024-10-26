@@ -62,4 +62,6 @@ add_executable(
 
         development/helpers/signal_handler/signal_handler.h
         development/helpers/signal_handler/signal_handler.cpp
+        development/helpers/process_incoming_command/include/process_incoming_command.h
+        development/helpers/process_incoming_command/src/process_incoming_command.cpp
 )
