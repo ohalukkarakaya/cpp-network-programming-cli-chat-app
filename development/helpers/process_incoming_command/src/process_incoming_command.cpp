@@ -30,6 +30,10 @@ void process_incoming_command(RequestData& request_data)
         }
         case UPDATEIP:
         {
+            if( request_data.getSenderId() != mainUserId && request_data.getMessage() == getSelectedRoom().getRoomId() )
+            {
+                getSelectedRoom().updateMemberIp( request_data.getSenderId(), request_data.getSenderIp() );
+            }
             break;
         }
         case AUDIO:

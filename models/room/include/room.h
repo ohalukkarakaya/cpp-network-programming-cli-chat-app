@@ -22,6 +22,7 @@ public:
   void userLeft(const std::string &userId);
   void addMessage(const std::string &senderId, const std::string &content);
   void sendMessage(const std::string &senderId, const std::string &content);
+  void updateMemberIp(const std::string &senderId, const std::string &newIp);
 
   [[nodiscard]] const std::string &getRoomId() const;
   const std::vector<RoomMember> &getMembers() const;

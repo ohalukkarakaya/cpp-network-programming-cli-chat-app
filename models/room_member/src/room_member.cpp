@@ -6,6 +6,12 @@ RoomMember::RoomMember(std::string userId, std::string userIp)
     : userId(std::move(userId)), userIp(std::move(userIp)),
       joinDate(std::time(nullptr)) {}
 
+
+void RoomMember::setUserIp( const std::string& new_ip_address )
+{
+    userIp = new_ip_address;
+}
+
 const std::string &RoomMember::getUserId() const { return userId; }
 
 const std::string &RoomMember::getUserIp() const { return userIp; }

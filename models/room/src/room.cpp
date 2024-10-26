@@ -65,6 +65,21 @@ void Room::sendMessage(const std::string &senderId,
   }
 }
 
+void Room::updateMemberIp(const std::string &senderId, const std::string &newIp)
+{
+    auto it = std::find_if(members.begin(), members.end(),
+                           [&senderId](const RoomMember &member) {
+                               return member.getUserId() == senderId;
+                           });
+
+    if (it != members.end()) {
+        it->setUserIp(newIp);
+        std::cout << "Updated IP for user " << senderId << " to " << newIp << std::endl;
+    } else {
+        std::cout << "User " << senderId << " not found in room " << roomId << std::endl;
+    }
+}
+
 const std::string &Room::getRoomId() const { return roomId; }
 
 const std::vector<RoomMember> &Room::getMembers() const { return members; }
