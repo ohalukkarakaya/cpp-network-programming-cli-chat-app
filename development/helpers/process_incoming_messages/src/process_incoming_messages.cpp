@@ -65,7 +65,7 @@ void process_incoming_messages(std::string& ipAddress)
         return;
     }
 
-    std::cout << "Listening for incoming messages on " << ipAddress << ":" << LISTEN_PORT << std::endl;
+    std::cout << "Listening for incoming messages of room " << BOLD_GREEN << getSelectedRoom().getRoomId() << RESET <<  " on " << BOLD_GREEN << ipAddress << ":" << LISTEN_PORT << RESET << std::endl;
 
     while (isRunning)
     {
