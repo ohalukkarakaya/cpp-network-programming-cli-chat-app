@@ -7,6 +7,7 @@
 #include "development/helpers/random_bytes/include/random_bytes.h"
 #include "development/helpers/join_a_room/include/join_a_room.h"
 #include "development/helpers/process_incoming_messages/include/process_incoming_messages.h"
+#include "development/helpers/process_user_input/include/process_user_input.h"
 
 #define BUFFER_SIZE 1024
 
@@ -24,11 +25,11 @@ int main() {
    std::thread messageThread(process_incoming_messages, std::ref(ipAdress));
 
   // listen user inputs
-  //std::thread inputThread(process_user_input); TODO
+  std::thread inputThread(process_user_input);
 
   // end threads
   messageThread.join();
-  //inputThread.join(); TODO
+  inputThread.join();
 
   return 0;
 }
