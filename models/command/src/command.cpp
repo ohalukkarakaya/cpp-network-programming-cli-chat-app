@@ -5,13 +5,13 @@ Command getCommandType(const std::string &command)
     std::string cmd = command;
     std::transform(cmd.begin(), cmd.end(), cmd.begin(), [](unsigned char c) { return std::toupper(c); });
 
-    if( cmd == "MESSAGE" ){ return MESSAGE; }
-    if( cmd == "NOTIFICATION" ){ return NOTIFICATION; }
-    if( cmd == "JOINROOM" ){ return JOINROOM; }
-    if( cmd == "LEAVEROOM" ){ return LEAVEROOM; }
-    if( cmd == "UPDATEIP" ){ return UPDATEIP; }
-    if( cmd == "AUDIO" ){ return AUDIO; }
-    if( cmd == "WHISPER" ){ return WHISPER;}
+    if( cmd == "MESSAGE" || cmd == "M" ){ return MESSAGE; }
+    if( cmd == "NOTIFICATION" || cmd == "N" ){ return NOTIFICATION; }
+    if( cmd == "JOINROOM" || cmd == "J" ){ return JOINROOM; }
+    if( cmd == "LEAVEROOM" || cmd == "L" ){ return LEAVEROOM; }
+    if( cmd == "UPDATEIP" || cmd == "UIP" ){ return UPDATEIP; }
+    if( cmd == "AUDIO" || cmd == "A" ){ return AUDIO; }
+    if( cmd == "WHISPER" || cmd == "W" ){ return WHISPER;}
 
     return UNKNOWN;
 }

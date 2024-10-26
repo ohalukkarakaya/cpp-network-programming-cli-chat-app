@@ -3,7 +3,6 @@
 void process_incoming_messages(std::string& ipAddress)
 {
 #ifdef _WIN32
-    // Start for windows
     WSADATA wsaData;
     if (WSAStartup(MAKEWORD(2, 2), &wsaData) != 0) {
         std::cerr << "WSAStartup failed" << std::endl;
@@ -14,10 +13,10 @@ void process_incoming_messages(std::string& ipAddress)
     int server_fd, new_socket;
     struct sockaddr_in address;
     int opt = 1;
-    socklen_t addrlen = sizeof(address);  // `socklen_t` olarak ayarlandı
+    socklen_t addrlen = sizeof(address);
     char buffer[1024] = {0};
 
-    // Create TCP socket
+    // TCP soketi oluştur
     if ((server_fd = socket(AF_INET, SOCK_STREAM, 0)) == INVALID_SOCKET)
     {
         perror("Socket failed");
@@ -27,7 +26,7 @@ void process_incoming_messages(std::string& ipAddress)
         return;
     }
 
-    // do settings to reuse port
+    // Portu yeniden kullanmak için ayarlar
     if (setsockopt(server_fd, SOL_SOCKET, SO_REUSEADDR, (char*)&opt, sizeof(opt)) == SOCKET_ERROR)
     {
         perror("Setsockopt failed");
@@ -38,12 +37,12 @@ void process_incoming_messages(std::string& ipAddress)
         return;
     }
 
-    // set connection adress info
+    // Bağlantı adres bilgilerini ayarlayın
     address.sin_family = AF_INET;
     address.sin_addr.s_addr = inet_addr(ipAddress.c_str());
     address.sin_port = htons(LISTEN_PORT);
 
-    // connect socket to defined port and ip
+    // Soketi belirtilen port ve IP ile bağlayın
     if (bind(server_fd, (struct sockaddr*)&address, sizeof(address)) == SOCKET_ERROR)
     {
         perror("Bind failed");
@@ -54,7 +53,7 @@ void process_incoming_messages(std::string& ipAddress)
         return;
     }
 
-    // start to listen comming connections
+    // Gelen bağlantıları dinlemeye başla
     if (listen(server_fd, 3) == SOCKET_ERROR)
     {
         perror("Listen failed");
@@ -95,26 +94,30 @@ void process_incoming_messages(std::string& ipAddress)
                 break;
             }
 
-            int valread = recv(new_socket, buffer, 1024, 0);
+            int valread = recv(new_socket, buffer, sizeof(buffer) - 1, 0);
             if (valread > 0)
             {
+                buffer[valread] = '\0';
                 std::string received_message(buffer);
 
-                RequestData* Prequest_data = parse_request_data( received_message );
-                RequestData request_data = *Prequest_data;
-
-                process_incoming_command( request_data );
+                RequestData* Prequest_data = parse_request_data(received_message);
+                if (Prequest_data)
+                {
+                    RequestData request_data = *Prequest_data;
+                    process_incoming_command(request_data);
+                }
+                else
+                {
+                    std::cerr << "Failed to parse request data." << std::endl;
+                }
             }
-
-            closesocket(new_socket);
         }
     }
 
-    // close main socket
+    closesocket(new_socket);
     closesocket(server_fd);
 
 #ifdef _WIN32
-    // Winsock sonlandırma
     WSACleanup();
 #endif
 }

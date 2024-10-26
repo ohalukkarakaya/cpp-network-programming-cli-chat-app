@@ -3,12 +3,14 @@
 
 #include <iostream>
 #include <regex>
+#include <sys/select.h>
 #include <thread>
 #include <unistd.h>
-#include <sys/select.h>
 
 #include "../../../global_variables/global_variables.h"
 
+#include "../../process_input/include/process_input.h"
+
 void get_user_input();
 
-#endif //PROCESS_USER_INPUT_H
+#endif // PROCESS_USER_INPUT_H

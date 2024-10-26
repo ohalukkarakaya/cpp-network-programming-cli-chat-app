@@ -8,6 +8,7 @@ void process_incoming_command(RequestData& request_data)
         {
             if( request_data.getMessage() != getSelectedRoom().getRoomId() || request_data.getSenderId() == mainUserId ) break;
             getSelectedRoom().userJoined(request_data.getSenderId(), request_data.getSenderIp() );
+            break;
         }
         case LEAVEROOM:
         {
@@ -17,6 +18,10 @@ void process_incoming_command(RequestData& request_data)
         }
         case MESSAGE:
         {
+            if( request_data.getSenderId() != mainUserId )
+            {
+                std::cout << BOLD_YELLOW << request_data.getSenderId() << ": " << RESET << request_data.getMessage() << ITALIC_LIGHT_GRAY << " - " << request_data.getCommandTime() << RESET << std::endl;
+            }
             break;
         }
         case NOTIFICATION:
