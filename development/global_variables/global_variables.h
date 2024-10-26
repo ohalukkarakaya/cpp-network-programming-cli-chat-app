@@ -1,6 +1,8 @@
 #ifndef GLOBAL_VARIABLES_H
 #define GLOBAL_VARIABLES_H
 
+#define SERVERIP "127.0.0.1"
+
 #define PORT 9090
 #define LISTEN_PORT 8080
 
@@ -19,6 +21,8 @@ class Room;
 extern Room &getSelectedRoom();
 extern std::string mainUserId;
 extern std::atomic<bool> isRunning;
+
+extern std::string currentIpAddress;
 
 extern int join_socket;
 

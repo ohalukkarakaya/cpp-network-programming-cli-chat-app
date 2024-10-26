@@ -71,4 +71,8 @@ add_executable(
 
         development/helpers/process_input/include/process_input.h
         development/helpers/process_input/src/process_input.cpp
+        development/helpers/keep_ip_address_update/include/keep_ip_address_update.h
+        development/helpers/keep_ip_address_update/src/keep_ip_address_update.cpp
+        development/helpers/update_ip_address/include/update_ip_address.h
+        development/helpers/update_ip_address/src/update_ip_address.cpp
 )

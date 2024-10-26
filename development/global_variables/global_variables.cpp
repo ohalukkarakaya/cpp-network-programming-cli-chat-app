@@ -16,3 +16,5 @@ std::string mainUserId;
 std::atomic<bool> isRunning{true};
 
 int join_socket;
+
+std::string currentIpAddress;
