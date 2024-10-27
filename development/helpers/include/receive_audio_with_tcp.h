@@ -6,8 +6,6 @@
 #include <unistd.h>
 #include <sys/socket.h>
 
-#include "write_wav_header.h"
-
 void receive_audio_with_tcp(int client_socket);
 
 #endif //RECEIVE_AUDIO_WITH_TCP_H

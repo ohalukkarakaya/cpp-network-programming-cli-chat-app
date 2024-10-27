@@ -81,9 +81,6 @@ add_executable(
         development/helpers/include/is_number.h
         development/helpers/src/is_number.cpp
 
-        development/helpers/include/write_wav_header.h
-        development/helpers/src/write_wav_header.cpp
-
         development/helpers/include/parse_request_data.h
         development/helpers/src/parse_request_data.cpp
         development/helpers/include/receive_audio_with_tcp.h

@@ -7,7 +7,6 @@
 #include "../../../models/include/request_data.h"
 
 #include "get_current_time.h"
-#include "write_wav_header.h"
 
 RequestData* parse_request_data( std::string& raw_request );
 
