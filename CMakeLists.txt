@@ -77,4 +77,6 @@ add_executable(
         development/helpers/update_ip_address/src/update_ip_address.cpp
         development/helpers/audio_recorder/include/audio_recorder.h
         development/helpers/audio_recorder/src/audio_recorder.cpp
+        development/helpers/is_number/include/is_number.h
+        development/helpers/is_number/src/is_number.cpp
 )

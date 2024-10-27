@@ -10,8 +10,6 @@
 #include "development/helpers/process_incoming_messages/include/process_incoming_messages.h"
 #include "development/helpers/random_bytes/include/random_bytes.h"
 
-#include "development/helpers/audio_recorder/include/audio_recorder.h"
-
 #define BUFFER_SIZE 1024
 
 int main(int argc, char* argv[]) {
@@ -24,11 +22,7 @@ int main(int argc, char* argv[]) {
 
     join_a_room(mainUserId, serverIp, ipAdress);
 
-    AudioRecorder recorder;
-    // 5 saniye boyunca ses kaydet ve output.wav dosyasına yaz
-    recorder.recordAudioToWav("./output.wav", 5.0f);
-
-    // listen incoming messages if the argument is not "--shouldlisten=false"
+    // listen incoming messages if the argument is not "--shouldlisten=false" or "--should_listen=false" for test
     bool shouldListen = true;
     for (int i = 1; i < argc; ++i) {
         if (std::string(argv[i]) == "--shouldlisten=false" || std::string(argv[i]) == "--should_listen=false") // Just for test

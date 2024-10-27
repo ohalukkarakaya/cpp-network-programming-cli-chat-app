@@ -21,7 +21,18 @@ void process_input(const std::string& cmd, const std::string& message)
             break;
         }
         case AUDIO: {
-            std::cout << "Audio file will send by FTP -- TO DO" << std::endl;
+            float duration;
+            if (is_number(message)) {
+                duration = std::stof(message);
+            } else {
+                duration = 2.0f;
+            }
+
+            AudioRecorder recorder;
+            std::string output_file_name = "./" + mainUserId + "_sound_message.wav";
+            recorder.recordAudioToWav(output_file_name, duration);
+
+            std::cout << "Audio file recorded to " << output_file_name << std::endl;
             break;
         }
         case WHISPER: {

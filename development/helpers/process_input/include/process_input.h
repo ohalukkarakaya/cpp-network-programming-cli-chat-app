@@ -13,6 +13,8 @@
 #include "../../../../models/room/include/room.h"
 
 #include "../../send_to_ip/include/sendToIp.h"
+#include "../../is_number/include/is_number.h"
+#include "../../audio_recorder/include/audio_recorder.h"
 
 void process_input(const std::string& cmd, const std::string& message);
 
