@@ -7,7 +7,7 @@ void process_input(const std::string& cmd, const std::string& message)
     switch (command) {
         case MESSAGE: {
             std::cout << BOLD_GREEN << "YOU: " << RESET << message << std::endl;
-            std::string message_to_send = "MESSAGE:" + main_user_id + "/0/" + message;
+            std::string message_to_send = "MESSAGE:" + main_user_id + "/" + current_ip_address + "/" + message;
             for (auto &member : get_selected_room().get_members()) {
                 if (member.get_user_id() != main_user_id) {
                     send_with_tcp(LISTEN_PORT, member.get_user_ip(), message_to_send, get_command_as_string(command));
@@ -27,7 +27,20 @@ void process_input(const std::string& cmd, const std::string& message)
             std::string output_file_name = "./" + main_user_id + "_sound_message.wav";
             recorder.record_audio_to_wav(output_file_name, duration);
 
-            std::cout << "Audio file recorded to " << output_file_name << std::endl;
+            for( auto &member : get_selected_room().get_members())
+            {
+                if( member.get_user_id() != main_user_id )
+                {
+                    send_audio_with_tcp(member.get_user_ip(), LISTEN_PORT, output_file_name);
+                }
+            }
+
+            std::remove(output_file_name.c_str());
+
+            std::cout << BOLD_GREEN
+                      << "YOU: "
+                      << RESET << "send an audio message..." << std::endl;
+
             break;
         }
         case WHISPER: {

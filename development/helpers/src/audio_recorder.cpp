@@ -25,7 +25,6 @@ void AudioRecorder::install_dependency(const std::string& command) {
     std::string install_command = "choco install " + command + " -y";
 
 #elif __APPLE__
-    // Homebrew var mı kontrol et
     if (system("brew -v > /dev/null 2>&1")) {  // `brew -v` komutu başarısızsa, Homebrew yüklü değil demektir.
         std::cout << "Homebrew bulunamadı. Yükleniyor..." << std::endl;
         system("/bin/bash -c \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)\"");
@@ -48,16 +47,20 @@ void AudioRecorder::install_dependency(const std::string& command) {
 }
 
 void AudioRecorder::record_audio_to_wav(const std::string& output_file_name, float duration_in_seconds) {
-    const std::string sox_command = "sox"; // Sox bağımlılığını kontrol et
+    const std::string sox_command = "sox";
 
-    // Bağımlılığın kurulu olup olmadığını kontrol et
     if (!is_command_available(sox_command)) {
         std::cout << sox_command << " is not installed. Installing..." << std::endl;
         install_dependency(sox_command);
         std::cout << sox_command << " has been installed." << std::endl;
     }
 
-    // Sox ile ses kaydı komutu
-    std::string command = "rec -r 44100 -c 1 " + output_file_name + " trim 0 " + std::to_string(static_cast<int>(duration_in_seconds));
+    std::string command;
+
+#ifdef _WIN32
+    command = "rec -r 44100 -c 1 " + output_file_name + " trim 0 " + std::to_string(static_cast<int>(duration_in_seconds)) + " > NUL 2>&1";
+#else
+    command = "rec -r 44100 -c 1 " + output_file_name + " trim 0 " + std::to_string(static_cast<int>(duration_in_seconds)) + " > /dev/null 2>&1";
+#endif
     system(command.c_str());
 }

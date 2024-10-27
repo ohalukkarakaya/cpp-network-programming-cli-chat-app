@@ -38,6 +38,11 @@ void process_incoming_command(RequestData& request_data)
         }
         case AUDIO:
         {
+            if ( request_data.get_sender_id() != main_user_id ) {
+                std::cout << BOLD_YELLOW
+                          << request_data.get_sender_id()
+                          << ": " << RESET << "send an audio message..." << std::endl;
+            }
             break;
         }
         case WHISPER:

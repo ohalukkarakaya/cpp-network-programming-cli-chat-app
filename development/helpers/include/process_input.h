@@ -11,6 +11,7 @@
 #include "send_with_tcp.h"
 #include "is_number.h"
 #include "audio_recorder.h"
+#include "send_audio_with_tcp.h"
 
 void process_input(const std::string& cmd, const std::string& message);
 

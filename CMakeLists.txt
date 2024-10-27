@@ -33,9 +33,6 @@ add_executable(
         development/helpers/include/send_with_tcp.h
         development/helpers/src/send_with_tcp.cpp
 
-        development/helpers/include/send_with_udp.h
-        development/helpers/src/send_with_udp.cpp
-
         development/helpers/include/parse_server_response.h
         development/helpers/src/parse_server_response.cpp
 
@@ -50,9 +47,6 @@ add_executable(
 
         models/include/command.h
         models/src/command.cpp
-
-        development/helpers/include/parse_command.h
-        development/helpers/src/parse_command.cpp
 
         models/include/request_data.h
         models/src/request_data.cpp
@@ -86,4 +80,14 @@ add_executable(
 
         development/helpers/include/is_number.h
         development/helpers/src/is_number.cpp
+
+        development/helpers/include/write_wav_header.h
+        development/helpers/src/write_wav_header.cpp
+
+        development/helpers/include/parse_request_data.h
+        development/helpers/src/parse_request_data.cpp
+        development/helpers/include/receive_audio_with_tcp.h
+        development/helpers/src/receive_audio_with_tcp.cpp
+        development/helpers/include/send_audio_with_tcp.h
+        development/helpers/src/send_audio_with_tcp.cpp
 )

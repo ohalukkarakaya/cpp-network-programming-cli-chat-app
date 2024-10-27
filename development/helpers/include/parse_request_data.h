@@ -1,5 +1,5 @@
-#ifndef PARSE_COMMAND_H
-#define PARSE_COMMAND_H
+#ifndef PARSE_REQUEST_DATA_H
+#define PARSE_REQUEST_DATA_H
 
 #include "../../global_variables/global_variables.h"
 
@@ -7,7 +7,8 @@
 #include "../../../models/include/request_data.h"
 
 #include "get_current_time.h"
+#include "write_wav_header.h"
 
 RequestData* parse_request_data( std::string& raw_request );
 
-#endif //PARSE_COMMAND_H
+#endif //PARSE_REQUEST_DATA_H
