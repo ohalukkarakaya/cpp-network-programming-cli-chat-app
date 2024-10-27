@@ -12,7 +12,7 @@
 #include "../../../../models/command/include/command.h"
 #include "../../../../models/room/include/room.h"
 
-#include "../../send_to_ip/include/sendToIp.h"
+#include "../../send_with_tcp/include/send_with_tcp.h"
 #include "../../is_number/include/is_number.h"
 #include "../../audio_recorder/include/audio_recorder.h"
 

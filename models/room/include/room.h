@@ -8,7 +8,7 @@
 
 #include "../../../development/global_variables/global_variables.h"
 
-#include "../../../development/helpers/send_to_ip/include/sendToIp.h"
+#include "../../../development/helpers/send_with_tcp/include/send_with_tcp.h"
 #include "../../message/include/message.h"
 #include "../../room_member/include/room_member.h"
 

@@ -11,7 +11,7 @@ void join_a_room(const std::string &mainUserId, const std::string &serverIp, std
 
     // get room list
     message = "GETROOMS/0/0/0";
-    int sock = sendToIp(PORT, serverIp, message, "GETROOMS");
+    int sock = send_with_tcp(PORT, serverIp, message, "GETROOMS");
 
     // get server response
     int valread = read(sock, buffer, BUFFER_SIZE);
@@ -40,7 +40,7 @@ void join_a_room(const std::string &mainUserId, const std::string &serverIp, std
     std::system("clear");
 
     message = "JOINROOM/" + mainUserId + "/" + ipAdress + "/" + userInputRoomId;
-    int joinSock = sendToIp(PORT, serverIp, message, "JOINROOM");
+    int joinSock = send_with_tcp(PORT, serverIp, message, "JOINROOM");
 
     valread = read(joinSock, buffer, BUFFER_SIZE);
 
@@ -53,7 +53,7 @@ void join_a_room(const std::string &mainUserId, const std::string &serverIp, std
         if(user.getUserId() != mainUserId)
         {
             std::string user_join_message = "JOINROOM:" + mainUserId + "/" + ipAdress + "/" + userInputRoomId;
-            int send_notification_sock = sendToIp(LISTEN_PORT, user.getUserIp(), user_join_message, "NOTIFICATION");
+            int send_notification_sock = send_with_tcp(LISTEN_PORT, user.getUserIp(), user_join_message, "NOTIFICATION");
             close(send_notification_sock);
         }
     }

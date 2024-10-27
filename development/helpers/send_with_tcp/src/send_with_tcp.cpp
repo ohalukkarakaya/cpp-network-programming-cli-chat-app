@@ -1,6 +1,6 @@
-#include "../include/sendToIp.h"
+#include "../include/send_with_tcp.h"
 
-int sendToIp(int port, const std::string &ip, const std::string &message, const std::string &type) {
+int send_with_tcp(int port, const std::string &ip, const std::string &message, const std::string &type) {
   int sock = socket(AF_INET, SOCK_STREAM, 0);
   if (sock < 0) {
     std::cerr << "Socket creation failed" << std::endl;

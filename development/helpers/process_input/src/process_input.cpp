@@ -14,8 +14,7 @@ void process_input(const std::string& cmd, const std::string& message)
             std::string message_to_send = "MESSAGE:" + mainUserId + "/0/" + message;
             for (auto &member : getSelectedRoom().getMembers()) {
                 if (member.getUserId() != mainUserId) {
-                    sendToIp(LISTEN_PORT, member.getUserIp(), message_to_send,
-                             getCommandAsString(command));
+                    send_with_tcp(LISTEN_PORT, member.getUserIp(), message_to_send, getCommandAsString(command));
                 }
             }
             break;

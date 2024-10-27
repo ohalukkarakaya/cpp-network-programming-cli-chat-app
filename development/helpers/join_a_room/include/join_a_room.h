@@ -11,7 +11,7 @@
 
 #include "../../../../models/room/include/room.h"
 
-#include "../../send_to_ip/include/sendToIp.h"
+#include "../../send_with_tcp/include/send_with_tcp.h"
 #include "../../parse_server_response/parse_server_response.h"
 #include "../../parse_server_response/parse_user_info/parse_user_info.h"
 #include "../../../get_room_id/include/getRoomId.h"

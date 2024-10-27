@@ -30,8 +30,8 @@ add_executable(
         models/message/include/message.h
         models/message/src/message.cpp
         
-        development/helpers/send_to_ip/include/sendToIp.h
-        development/helpers/send_to_ip/src/sendToIp.cpp
+        development/helpers/send_with_tcp/include/send_with_tcp.h
+        development/helpers/send_with_tcp/src/send_with_tcp.cpp
 
         development/helpers/parse_server_response/parse_server_response.h
         development/helpers/parse_server_response/parse_server_response.cpp
@@ -80,7 +80,7 @@ add_executable(
 
         development/helpers/audio_recorder/include/audio_recorder.h
         development/helpers/audio_recorder/src/audio_recorder.cpp
-        
+
         development/helpers/is_number/include/is_number.h
         development/helpers/is_number/src/is_number.cpp
 )
