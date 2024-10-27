@@ -1,0 +1,12 @@
+# Build directory
+build/
+
+# Build directory
+cmake-build-debug/
+
+# CLion IDE generated files
+*.iml
+.idea/
+*.user
+*.sublime-workspace
+*.sublime-project
