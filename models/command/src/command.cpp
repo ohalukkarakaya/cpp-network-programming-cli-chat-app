@@ -1,6 +1,6 @@
 #include "../include/command.h"
 
-Command getCommandType(const std::string &command)
+Command get_command_type(const std::string &command)
 {
     std::string cmd = command;
     std::transform(cmd.begin(), cmd.end(), cmd.begin(), [](unsigned char c) { return std::toupper(c); });
@@ -16,7 +16,7 @@ Command getCommandType(const std::string &command)
     return UNKNOWN;
 }
 
-std::string getCommandAsString(Command command)
+std::string get_command_as_string(Command command)
 {
     switch (command) {
         case MESSAGE: {

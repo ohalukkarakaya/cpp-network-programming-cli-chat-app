@@ -3,6 +3,6 @@
 
 #include "../../helpers/getch/include/getch.h"
 
-std::string getRoomId(int maxLength);
+std::string get_room_id(int max_length);
 
 #endif // GETROOMID_H

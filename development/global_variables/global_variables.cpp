@@ -3,14 +3,14 @@
 
 Room selected_room;
 
-Room& getSelectedRoom() {
+Room& get_selected_room() {
     return selected_room;
 }
 
-std::string mainUserId;
+std::string main_user_id;
 
-std::atomic<bool> isRunning{true};
+std::atomic<bool> is_running{true};
 
 int join_socket;
 
-std::string currentIpAddress;
+std::string current_ip_address;

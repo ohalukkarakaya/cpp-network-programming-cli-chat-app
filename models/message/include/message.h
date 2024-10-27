@@ -8,18 +8,18 @@
 
 class Message {
 public:
-  Message(const std::string &senderId, const std::string &content);
+  Message(const std::string &sender_id, const std::string &content);
 
-  std::string getSenderId() const;
-  std::string getContent() const;
-  std::string getTimestamp() const;
+  std::string get_sender_id() const;
+  std::string get_content() const;
+  std::string get_time_stamp() const;
 
 private:
-  std::string senderId;
+  std::string sender_id;
   std::string content;
-  std::string timestamp;
+  std::string time_stamp;
 
-  static std::string currentDateTime();
+  static std::string current_date_time();
 };
 
 #endif // MESSAGE_H

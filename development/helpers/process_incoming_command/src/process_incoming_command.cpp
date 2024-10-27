@@ -2,25 +2,25 @@
 
 void process_incoming_command(RequestData& request_data)
 {
-    switch( request_data.getCommand() )
+    switch( request_data.get_command() )
     {
         case JOINROOM:
         {
-            if( request_data.getMessage() != getSelectedRoom().getRoomId() || request_data.getSenderId() == mainUserId ) break;
-            getSelectedRoom().userJoined(request_data.getSenderId(), request_data.getSenderIp() );
+            if( request_data.get_message() != get_selected_room().get_room_id() || request_data.get_sender_id() == main_user_id ) break;
+            get_selected_room().user_joined(request_data.get_sender_id(), request_data.get_sender_ip() );
             break;
         }
         case LEAVEROOM:
         {
-            if( request_data.getMessage() != getSelectedRoom().getRoomId() ) break;
-            getSelectedRoom().userLeft(request_data.getSenderId());
+            if( request_data.get_message() != get_selected_room().get_room_id() ) break;
+            get_selected_room().user_left(request_data.get_sender_id());
             break;
         }
         case MESSAGE:
         {
-            if( request_data.getSenderId() != mainUserId )
+            if( request_data.get_sender_id() != main_user_id )
             {
-                std::cout << BOLD_YELLOW << request_data.getSenderId() << ": " << RESET << request_data.getMessage() << ITALIC_LIGHT_GRAY << " - " << request_data.getCommandTime() << RESET << std::endl;
+                std::cout << BOLD_YELLOW << request_data.get_sender_id() << ": " << RESET << request_data.get_message() << ITALIC_LIGHT_GRAY << " - " << request_data.get_command_time() << RESET << std::endl;
             }
             break;
         }
@@ -30,9 +30,9 @@ void process_incoming_command(RequestData& request_data)
         }
         case UPDATEIP:
         {
-            if( request_data.getSenderId() != mainUserId && request_data.getMessage() == getSelectedRoom().getRoomId() )
+            if( request_data.get_sender_id() != main_user_id && request_data.get_message() == get_selected_room().get_room_id() )
             {
-                getSelectedRoom().updateMemberIp( request_data.getSenderId(), request_data.getSenderIp() );
+                get_selected_room().update_member_ip( request_data.get_sender_id(), request_data.get_sender_ip() );
             }
             break;
         }

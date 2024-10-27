@@ -7,26 +7,26 @@ int send_with_tcp(int port, const std::string &ip, const std::string &message, c
     return -1;
   }
 
-  sockaddr_in serverAddr{};
-  std::memset(&serverAddr, 0, sizeof(serverAddr));
-  serverAddr.sin_family = AF_INET;
-  serverAddr.sin_port = htons(port);
-  inet_pton(AF_INET, ip.c_str(), &serverAddr.sin_addr);
+  sockaddr_in server_addr{};
+  std::memset(&server_addr, 0, sizeof(server_addr));
+  server_addr.sin_family = AF_INET;
+  server_addr.sin_port = htons(port);
+  inet_pton(AF_INET, ip.c_str(), &server_addr.sin_addr);
 
-    // Sunucu IP adresini ayarla
-    if (inet_pton(AF_INET, ip.c_str(), &serverAddr.sin_addr) <= 0) {
+    // Set Server Ip Address
+    if (inet_pton(AF_INET, ip.c_str(), &server_addr.sin_addr) <= 0) {
         std::cerr << "Invalid address/ Address not supported" << std::endl;
         return -1;
     }
 
-  if (connect(sock, (struct sockaddr *)&serverAddr, sizeof(serverAddr)) < 0) {
+  if (connect(sock, (struct sockaddr *)&server_addr, sizeof(server_addr)) < 0) {
     std::cerr << "Connection to " << ip << " failed" << std::endl;
     close(sock);
     return -1;
   }
 
-  std::string fullMessage = type + ":" + message;
-  send(sock, fullMessage.c_str(), fullMessage.size(), 0);
+  std::string full_message = type + ":" + message;
+  send(sock, full_message.c_str(), full_message.size(), 0);
 
   return sock;
 }

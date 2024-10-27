@@ -1,85 +1,84 @@
 #include "../include/room.h"
 
-void Room::setRoomId(std::string &newRoomId)
+void Room::set_room_id(std::string &new_room_id)
 {
-    roomId = newRoomId;
+    room_id = new_room_id;
 }
 
-void Room::notifyUsersOnJoin( std::string &userIp )
+void Room::notify_users_on_join( std::string &user_ip )
 {
-    std::string message = "{userId: " + mainUserId + "," + "userIp: " + userIp + "}";
+    std::string message = "{userId: " + main_user_id + "," + "userIp: " + user_ip + "}";
     for( const auto &member : members )
     {
-        if(member.getUserId() != mainUserId)
+        if(member.get_user_id() != main_user_id)
         {
-            send_with_tcp(PORT, member.getUserIp(), message, "NOTIFICATION");
+            send_with_tcp(PORT, member.get_user_ip(), message, "NOTIFICATION");
         }
     }
 }
 
-void Room::userJoined(const std::string &userId, const std::string &userIp, const bool shouldGiveNotification)
+void Room::user_joined(const std::string &user_id, const std::string &user_ip, const bool should_give_notification)
 {
-  members.emplace_back(userId, userIp);
-  if (mainUserId != userId && shouldGiveNotification)
+  members.emplace_back(user_id, user_ip);
+  if (main_user_id != user_id && should_give_notification)
   {
-    std::cout << "\033[33m" << userId << "\033[1;34m" << " joined chat in room " << "\033[33m" << roomId << "\033[0m" << std::endl;
+    std::cout << "\033[33m" << user_id << "\033[1;34m" << " joined chat in room " << "\033[33m" << room_id << "\033[0m" << std::endl;
   }
 }
 
-void Room::userLeft(const std::string &userId)
+void Room::user_left(const std::string &user_id)
 {
   auto it = std::remove_if(
    members.begin(), members.end(),
-   [&userId](const RoomMember &member)
+   [&user_id](const RoomMember &member)
    {
-     return member.getUserId() == userId;
+     return member.get_user_id() == user_id;
    });
 
   if (it != members.end())
   {
     members.erase(it, members.end());
-    std::cout << "\033[33m" << userId << BOLD_RED << " left chat in room " << "\033[33m" << roomId << RESET << std::endl;
+    std::cout << "\033[33m" << user_id << BOLD_RED << " left chat in room " << "\033[33m" << room_id << RESET << std::endl;
 
     if ( members.empty() )
     {
-      std::cout << BOLD_RED << "Room " << roomId << " is now empty and will be deleted." << RESET << std::endl;
+      std::cout << BOLD_RED << "Room " << room_id << " is now empty and will be deleted." << RESET << std::endl;
     }
   }
 }
 
-void Room::addMessage(const std::string &senderId, const std::string &content) {
-  messages.emplace_back(senderId, content);
+void Room::add_message(const std::string &sender_id, const std::string &content) {
+  messages.emplace_back(sender_id, content);
 }
 
-void Room::sendMessage(const std::string &senderId,
-                       const std::string &content) {
-  addMessage(senderId, content);
+void Room::send_message(const std::string &sender_id, const std::string &content) {
+  add_message(sender_id, content);
 
-  std::string message = senderId + ": " + content;
+  std::string message = sender_id + ": " + content;
   for (const auto &member : members) {
-    if (member.getUserId() != senderId) {
-        send_with_tcp(PORT, member.getUserIp(), message);
+    if (member.get_user_id() != sender_id) {
+        send_with_tcp(PORT, member.get_user_ip(), message);
     }
   }
 }
 
-void Room::updateMemberIp(const std::string &senderId, const std::string &newIp)
+void Room::update_member_ip(const std::string &sender_id, const std::string &new_ip)
 {
     auto it = std::find_if(members.begin(), members.end(),
-                           [&senderId](const RoomMember &member) {
-                               return member.getUserId() == senderId;
+                           [&sender_id](const RoomMember &member) {
+                               return member.get_user_id() == sender_id;
                            });
 
     if (it != members.end()) {
-        it->setUserIp(newIp);
-        std::cout << "Updated IP for user " << senderId << " to " << newIp << std::endl;
+        it->set_user_ip(new_ip);
+        std::cout << "Updated IP for user " << sender_id << " to " << new_ip << std::endl;
     } else {
-        std::cout << "User " << senderId << " not found in room " << roomId << std::endl;
+        std::cout << "User " << sender_id << " not found in room " << room_id << std::endl;
     }
 }
 
-const std::string &Room::getRoomId() const { return roomId; }
+const std::string &Room::get_room_id() const { return room_id; }
 
-const std::vector<RoomMember> &Room::getMembers() const { return members; }
+const std::vector<RoomMember> &Room::get_members() const { return members; }
 
-const std::vector<Message> &Room::getMessages() const { return messages; }
+const std::vector<Message> &Room::get_messages() const { return messages; }

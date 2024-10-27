@@ -5,7 +5,7 @@
 
 #include "../../../global_variables/global_variables.h"
 
-#include "../../get_ip_adress/include/getIpAdress.h"
+#include "../../get_ip_address/include/get_ip_address.h"
 #include "../../update_ip_address/include/update_ip_address.h"
 
 void keep_ip_address_update();

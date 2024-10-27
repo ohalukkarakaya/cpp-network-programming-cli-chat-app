@@ -2,15 +2,15 @@
 
 void process_input(const std::string& cmd, const std::string& message)
 {
-    Command command = getCommandType(cmd);
+    Command command = get_command_type(cmd);
 
     switch (command) {
         case MESSAGE: {
             std::cout << BOLD_GREEN << "YOU: " << RESET << message << std::endl;
-            std::string message_to_send = "MESSAGE:" + mainUserId + "/0/" + message;
-            for (auto &member : getSelectedRoom().getMembers()) {
-                if (member.getUserId() != mainUserId) {
-                    send_with_tcp(LISTEN_PORT, member.getUserIp(), message_to_send, getCommandAsString(command));
+            std::string message_to_send = "MESSAGE:" + main_user_id + "/0/" + message;
+            for (auto &member : get_selected_room().get_members()) {
+                if (member.get_user_id() != main_user_id) {
+                    send_with_tcp(LISTEN_PORT, member.get_user_ip(), message_to_send, get_command_as_string(command));
                 }
             }
             break;
@@ -24,8 +24,8 @@ void process_input(const std::string& cmd, const std::string& message)
             }
 
             AudioRecorder recorder;
-            std::string output_file_name = "./" + mainUserId + "_sound_message.wav";
-            recorder.recordAudioToWav(output_file_name, duration);
+            std::string output_file_name = "./" + main_user_id + "_sound_message.wav";
+            recorder.record_audio_to_wav(output_file_name, duration);
 
             std::cout << "Audio file recorded to " << output_file_name << std::endl;
             break;

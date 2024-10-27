@@ -1,10 +1,10 @@
 #include "../include/process_incoming_messages.h"
 
-void process_incoming_messages(std::string& ipAddress)
+void process_incoming_messages(std::string& ip_address)
 {
 #ifdef _WIN32
-    WSADATA wsaData;
-    if (WSAStartup(MAKEWORD(2, 2), &wsaData) != 0) {
+    WSADATA wsa_data;
+    if (WSAStartup(MAKEWORD(2, 2), &wsa_data) != 0) {
         std::cerr << "WSAStartup failed" << std::endl;
         return;
     }
@@ -16,7 +16,7 @@ void process_incoming_messages(std::string& ipAddress)
     socklen_t addrlen = sizeof(address);
     char buffer[1024] = {0};
 
-    // TCP soketi oluştur
+    // create TCP socket
     if ((server_fd = socket(AF_INET, SOCK_STREAM, 0)) == INVALID_SOCKET)
     {
         perror("Socket failed");
@@ -26,7 +26,7 @@ void process_incoming_messages(std::string& ipAddress)
         return;
     }
 
-    // Portu yeniden kullanmak için ayarlar
+    // set port to reuse
     if (setsockopt(server_fd, SOL_SOCKET, SO_REUSEADDR, (char*)&opt, sizeof(opt)) == SOCKET_ERROR)
     {
         perror("Setsockopt failed");
@@ -37,12 +37,12 @@ void process_incoming_messages(std::string& ipAddress)
         return;
     }
 
-    // Bağlantı adres bilgilerini ayarlayın
+    // set connection address info
     address.sin_family = AF_INET;
-    address.sin_addr.s_addr = inet_addr(ipAddress.c_str());
+    address.sin_addr.s_addr = inet_addr(ip_address.c_str());
     address.sin_port = htons(LISTEN_PORT);
 
-    // Soketi belirtilen port ve IP ile bağlayın
+    // connect socket to ip and prt
     if (bind(server_fd, (struct sockaddr*)&address, sizeof(address)) == SOCKET_ERROR)
     {
         perror("Bind failed");
@@ -53,7 +53,7 @@ void process_incoming_messages(std::string& ipAddress)
         return;
     }
 
-    // Gelen bağlantıları dinlemeye başla
+    // listen incoming messages
     if (listen(server_fd, 3) == SOCKET_ERROR)
     {
         perror("Listen failed");
@@ -64,9 +64,9 @@ void process_incoming_messages(std::string& ipAddress)
         return;
     }
 
-    std::cout << "Listening for incoming messages of room " << BOLD_GREEN << getSelectedRoom().getRoomId() << RESET <<  " on " << BOLD_GREEN << ipAddress << ":" << LISTEN_PORT << RESET << std::endl;
+    std::cout << "Listening for incoming messages of room " << BOLD_GREEN << get_selected_room().get_room_id() << RESET <<  " on " << BOLD_GREEN << ip_address << ":" << LISTEN_PORT << RESET << std::endl;
 
-    while (isRunning)
+    while (is_running)
     {
         fd_set readfds;
         FD_ZERO(&readfds);
@@ -77,14 +77,13 @@ void process_incoming_messages(std::string& ipAddress)
         timeout.tv_usec = 0;
 
         int activity = select(server_fd + 1, &readfds, NULL, NULL, &timeout);
-
         if (activity < 0 && errno != EINTR)
         {
             perror("Select error");
             break;
         }
 
-        if (!isRunning) break;
+        if (!is_running) break;
 
         if (FD_ISSET(server_fd, &readfds))
         {
@@ -100,10 +99,10 @@ void process_incoming_messages(std::string& ipAddress)
                 buffer[valread] = '\0';
                 std::string received_message(buffer);
 
-                RequestData* Prequest_data = parse_request_data(received_message);
-                if (Prequest_data)
+                RequestData* p_request_data = parse_request_data(received_message);
+                if (p_request_data)
                 {
-                    RequestData request_data = *Prequest_data;
+                    RequestData request_data = *p_request_data;
                     process_incoming_command(request_data);
                 }
                 else

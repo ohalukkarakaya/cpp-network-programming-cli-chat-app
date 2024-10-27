@@ -1,13 +1,13 @@
 #include "../include/join_a_room.h"
 
-void join_a_room(const std::string &mainUserId, const std::string &serverIp, std::string &ipAdress)
+void join_a_room(const std::string &main_user_id, const std::string &server_ip, std::string &ip_address)
 {
     std::string message;
     char buffer[BUFFER_SIZE] = {0};
 
     // get room list
     message = "GETROOMS/0/0/0";
-    int sock = send_with_tcp(PORT, serverIp, message, "GETROOMS");
+    int sock = send_with_tcp(PORT, server_ip, message, "GETROOMS");
 
     // get server response
     int valread = read(sock, buffer, BUFFER_SIZE);
@@ -27,16 +27,16 @@ void join_a_room(const std::string &mainUserId, const std::string &serverIp, std
     close(sock);
 
     //print users info
-    std::cout << "\033[33mYour User ID: \033[34m" << mainUserId << "\033[0m" << std::endl;
+    std::cout << "\033[33mYour User ID: \033[34m" << main_user_id << "\033[0m" << std::endl;
 
-    const int maxLength = 10;
-    std::string userInputRoomId = getRoomId(maxLength);
-    getSelectedRoom().setRoomId(userInputRoomId);
+    const int max_length = 10;
+    std::string user_input_room_id = get_room_id(max_length);
+    get_selected_room().set_room_id(user_input_room_id);
 
     std::system("clear");
 
-    message = "JOINROOM/" + mainUserId + "/" + ipAdress + "/" + userInputRoomId;
-    int joinSock = send_with_tcp(PORT, serverIp, message, "JOINROOM");
+    message = "JOINROOM/" + main_user_id + "/" + ip_address + "/" + user_input_room_id;
+    int joinSock = send_with_tcp(PORT, server_ip, message, "JOINROOM");
 
     valread = read(joinSock, buffer, BUFFER_SIZE);
 
@@ -44,17 +44,17 @@ void join_a_room(const std::string &mainUserId, const std::string &serverIp, std
     std::vector<RoomMember> members = parse_user_info(buffer);
 
     for (const auto &user : members) {
-        getSelectedRoom().userJoined(user.getUserId(), user.getUserIp(), false);
+        get_selected_room().user_joined(user.get_user_id(), user.get_user_ip(), false);
 
-        if(user.getUserId() != mainUserId)
+        if(user.get_user_id() != main_user_id)
         {
-            std::string user_join_message = "JOINROOM:" + mainUserId + "/" + ipAdress + "/" + userInputRoomId;
-            int send_notification_sock = send_with_tcp(LISTEN_PORT, user.getUserIp(), user_join_message, "NOTIFICATION");
+            std::string user_join_message = "JOINROOM:" + main_user_id + "/" + ip_address + "/" + user_input_room_id;
+            int send_notification_sock = send_with_tcp(LISTEN_PORT, user.get_user_ip(), user_join_message, "NOTIFICATION");
             close(send_notification_sock);
         }
     }
 
-    getSelectedRoom().notifyUsersOnJoin(ipAdress);
+    get_selected_room().notify_users_on_join(ip_address);
 
     // Socket kapat
     join_socket = joinSock;

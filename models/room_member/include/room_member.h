@@ -9,15 +9,15 @@ class RoomMember {
 public:
   RoomMember(std::string userId, std::string userIp);
 
-  void setUserIp( const std::string& new_ip_address );
-  [[nodiscard]] const std::string &getUserId() const;
-  [[nodiscard]] const std::string &getUserIp() const;
-  time_t getJoinDate() const;
+  void set_user_ip( const std::string& new_ip_address );
+  [[nodiscard]] const std::string &get_user_id() const;
+  [[nodiscard]] const std::string &get_user_ip() const;
+  time_t get_join_date() const;
 
 private:
-  std::string userId;
-  std::string userIp;
-  time_t joinDate;
+  std::string user_id;
+  std::string user_ip;
+  time_t join_date;
 };
 
 #endif // ROOMMEMBER_H

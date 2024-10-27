@@ -1,7 +1,7 @@
 #ifndef RANDOM_BYTES_H
 #define RANDOM_BYTES_H
 
-#include "../../to_upper_case/include/toUpperCase.h"
+#include "../../to_upper_case/include/to_upper_case.h"
 
 #include <iomanip>
 #include <random>
@@ -10,6 +10,6 @@
 #include <vector>
 
 // gets size
-std::string generateRandomBytesHex(size_t length);
+std::string generate_random_bytes_hex(size_t length);
 
 #endif // RANDOM_BYTES_H

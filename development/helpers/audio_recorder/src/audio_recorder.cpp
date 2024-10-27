@@ -2,16 +2,16 @@
 
 AudioRecorder::AudioRecorder() = default;
 
-bool AudioRecorder::isCommandAvailable(const std::string& command) {
+bool AudioRecorder::is_command_available(const std::string& command) {
 #ifdef _WIN32
-    std::string checkCommand = "where " + command + " > nul 2>&1"; // Windows
+    std::string check_command = "where " + command + " > nul 2>&1"; // windows
 #else
-    std::string checkCommand = "which " + command + " > /dev/null 2>&1"; // Linux ve macOS
+    std::string check_command = "which " + command + " > /dev/null 2>&1"; // linux and macos
 #endif
-    return (system(checkCommand.c_str()) == 0);
+    return (system(check_command.c_str()) == 0);
 }
 
-void AudioRecorder::installDependency(const std::string& command) {
+void AudioRecorder::install_dependency(const std::string& command) {
 #ifdef _WIN32
     // Chocolatey var mı kontrol et
     if (system("choco -v >nul 2>&1")) {  // `choco -v` komutu başarısızsa, Chocolatey yüklü değil demektir.
@@ -22,7 +22,7 @@ void AudioRecorder::installDependency(const std::string& command) {
                "iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))");
     }
     // Chocolatey üzerinden bağımlılığı kur
-    std::string installCommand = "choco install " + command + " -y";
+    std::string install_command = "choco install " + command + " -y";
 
 #elif __APPLE__
     // Homebrew var mı kontrol et
@@ -31,7 +31,7 @@ void AudioRecorder::installDependency(const std::string& command) {
         system("/bin/bash -c \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)\"");
     }
     // Homebrew üzerinden bağımlılığı kur
-    std::string installCommand = "brew install " + command;
+    std::string install_command = "brew install " + command;
 
 #elif __linux__
     // `apt` var mı kontrol et
@@ -40,24 +40,24 @@ void AudioRecorder::installDependency(const std::string& command) {
         system("sudo apt-get update && sudo apt-get install -y apt");
     }
     // `apt` ile bağımlılığı kur
-    std::string installCommand = "sudo apt install " + command + " -y";
+    std::string install_command = "sudo apt install " + command + " -y";
 #endif
 
     std::cout << "Installing " << command << "..." << std::endl;
-    system(installCommand.c_str());
+    system(install_command.c_str());
 }
 
-void AudioRecorder::recordAudioToWav(const std::string& outputFileName, float durationInSeconds) {
-    const std::string soxCommand = "sox"; // Sox bağımlılığını kontrol et
+void AudioRecorder::record_audio_to_wav(const std::string& output_file_name, float duration_in_seconds) {
+    const std::string sox_command = "sox"; // Sox bağımlılığını kontrol et
 
     // Bağımlılığın kurulu olup olmadığını kontrol et
-    if (!isCommandAvailable(soxCommand)) {
-        std::cout << soxCommand << " is not installed. Installing..." << std::endl;
-        installDependency(soxCommand);
-        std::cout << soxCommand << " has been installed." << std::endl;
+    if (!is_command_available(sox_command)) {
+        std::cout << sox_command << " is not installed. Installing..." << std::endl;
+        install_dependency(sox_command);
+        std::cout << sox_command << " has been installed." << std::endl;
     }
 
     // Sox ile ses kaydı komutu
-    std::string command = "rec -r 44100 -c 1 " + outputFileName + " trim 0 " + std::to_string(static_cast<int>(durationInSeconds));
+    std::string command = "rec -r 44100 -c 1 " + output_file_name + " trim 0 " + std::to_string(static_cast<int>(duration_in_seconds));
     system(command.c_str());
 }

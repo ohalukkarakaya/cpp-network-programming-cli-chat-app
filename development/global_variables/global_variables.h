@@ -18,11 +18,11 @@
 
 class Room;
 
-extern Room &getSelectedRoom();
-extern std::string mainUserId;
-extern std::atomic<bool> isRunning;
+extern Room &get_selected_room();
+extern std::string main_user_id;
+extern std::atomic<bool> is_running;
 
-extern std::string currentIpAddress;
+extern std::string current_ip_address;
 
 extern int join_socket;
 

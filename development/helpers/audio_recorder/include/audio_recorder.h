@@ -24,10 +24,10 @@ public:
     AudioRecorder();
 
     // Ses kaydını başlat
-    void recordAudioToWav(const std::string& outputFileName, float durationInSeconds);
+    void record_audio_to_wav(const std::string& output_file_name, float duration_in_seconds);
 private:
-    static bool isCommandAvailable(const std::string& command);
-    static void installDependency(const std::string& command);
+    static bool is_command_available(const std::string& command);
+    static void install_dependency(const std::string& command);
 };
 
 #endif // AUDIO_RECORDER_H

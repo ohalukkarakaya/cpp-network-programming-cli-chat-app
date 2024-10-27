@@ -30,6 +30,6 @@
 
 #include "../../../../models/request_data/include/request_data.h"
 
-void process_incoming_messages( std::string& ipAddress );
+void process_incoming_messages( std::string& ip_address );
 
 #endif //PROCESS_INCOMING_MESSAGES_H

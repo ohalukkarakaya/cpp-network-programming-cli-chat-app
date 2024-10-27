@@ -7,6 +7,6 @@
 #include <iomanip>
 #include <sstream>
 
-std::string getCurrentTimeAsString();
+std::string get_current_time_as_string();
 
 #endif //GET_CURRENT_TIME_H

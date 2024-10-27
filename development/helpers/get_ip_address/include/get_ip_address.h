@@ -5,6 +5,6 @@
 #include <ifaddrs.h>
 #include <iostream>
 
-std::string getIPAddress();
+std::string get_ip_address();
 
 #endif // GETIPADRESS_H

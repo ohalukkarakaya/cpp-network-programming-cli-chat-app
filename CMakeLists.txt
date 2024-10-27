@@ -8,24 +8,24 @@ add_executable(
         
         development/helpers/random_bytes/include/random_bytes.h
         development/helpers/random_bytes/src/random_bytes.cpp
-        
-        development/helpers/to_upper_case/include/toUpperCase.h
-        development/helpers/to_upper_case/src/toUpperCase.cpp
+
+        development/helpers/to_upper_case/include/to_upper_case.h
+        development/helpers/to_upper_case/src/to_upper_case.cpp
         
         development/helpers/getch/include/getch.h
         development/helpers/getch/src/getch.cpp
-        
-        development/get_room_id/include/getRoomId.h
-        development/get_room_id/src/getRoomId.cpp
+
+        development/get_room_id/include/get_room_id.h
+        development/get_room_id/src/get_room_id.cpp
         
         models/room/include/room.h
         models/room/src/room.cpp
         
         models/room_member/include/room_member.h
         models/room_member/src/room_member.cpp
-        
-        development/helpers/get_ip_adress/include/getIpAdress.h
-        development/helpers/get_ip_adress/src/getIpAdress.cpp
+
+        development/helpers/get_ip_address/include/get_ip_address.h
+        development/helpers/get_ip_address/src/get_ip_address.cpp
         
         models/message/include/message.h
         models/message/src/message.cpp

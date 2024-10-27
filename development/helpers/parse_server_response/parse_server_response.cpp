@@ -13,14 +13,14 @@ std::vector<std::string> parse_server_response( const std::string& response )
         return values;
     }
 
-    // Virgül ile ayrılmış değerleri al
+    // Get comma separated values
     while (std::getline(ss, token, ',')) {
-        // Boşlukları ve tırnak işaretlerini temizle
+        // Clean up spaces and quotation marks
         token.erase(std::remove_if(token.begin(), token.end(), [](unsigned char c) {
-            return std::isspace(c) || c == '\"'; // Fazla boşlukları ve tırnak işaretlerini temizle
+            return std::isspace(c) || c == '\"'; // Remove extra spaces and quotation marks
         }), token.end());
 
-        if (!token.empty()) { // Boş değerleri atla
+        if (!token.empty()) { // Skip null values
             values.push_back(token);
         }
     }

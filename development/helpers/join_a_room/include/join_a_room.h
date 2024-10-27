@@ -10,8 +10,8 @@
 #include "../../send_with_tcp/include/send_with_tcp.h"
 #include "../../parse_server_response/parse_server_response.h"
 #include "../../parse_server_response/parse_user_info/parse_user_info.h"
-#include "../../../get_room_id/include/getRoomId.h"
+#include "../../../get_room_id/include/get_room_id.h"
 
-void join_a_room(const std::string &mainUserId, const std::string &serverIp, std::string &ipAdress);
+void join_a_room(const std::string &main_user_id, const std::string &server_ip, std::string &ip_address);
 
 #endif //JOIN_A_ROOM_H

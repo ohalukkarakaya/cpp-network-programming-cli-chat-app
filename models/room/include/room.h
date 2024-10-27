@@ -14,22 +14,22 @@
 
 class Room {
 public:
-    Room() : roomId("") {}
+    Room() : room_id("") {}
 
-  void setRoomId(std::string &roomId);
-  void notifyUsersOnJoin( std::string &userIp );
-  void userJoined(const std::string &userId, const std::string &userIp, const bool shouldGiveNotification = true);
-  void userLeft(const std::string &userId);
-  void addMessage(const std::string &senderId, const std::string &content);
-  void sendMessage(const std::string &senderId, const std::string &content);
-  void updateMemberIp(const std::string &senderId, const std::string &newIp);
+  void set_room_id(std::string &room_id);
+  void notify_users_on_join( std::string &user_ip );
+  void user_joined(const std::string &user_id, const std::string &user_ip, const bool should_give_notification = true);
+  void user_left(const std::string &user_id);
+  void add_message(const std::string &sender_id, const std::string &content);
+  void send_message(const std::string &sender_id, const std::string &content);
+  void update_member_ip(const std::string &sender_id, const std::string &new_ip);
 
-  [[nodiscard]] const std::string &getRoomId() const;
-  const std::vector<RoomMember> &getMembers() const;
-  const std::vector<Message> &getMessages() const;
+  [[nodiscard]] const std::string &get_room_id() const;
+  const std::vector<RoomMember> &get_members() const;
+  const std::vector<Message> &get_messages() const;
 
 private:
-  std::string roomId;
+  std::string room_id;
   std::vector<RoomMember> members;
   std::vector<Message> messages;
 };
