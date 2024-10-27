@@ -90,4 +90,6 @@ add_executable(
         development/helpers/src/receive_audio_with_tcp.cpp
         development/helpers/include/send_audio_with_tcp.h
         development/helpers/src/send_audio_with_tcp.cpp
+        development/helpers/include/play_audio.h
+        development/helpers/src/play_audio.cpp
 )

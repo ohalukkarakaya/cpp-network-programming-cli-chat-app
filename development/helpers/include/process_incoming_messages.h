@@ -29,6 +29,7 @@ typedef int socklen_t;
 #include "parse_request_data.h"
 #include "process_incoming_command.h"
 #include "receive_audio_with_tcp.h"
+#include "play_audio.h"
 
 #include "../../../models/include/request_data.h"
 

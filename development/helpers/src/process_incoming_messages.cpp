@@ -111,6 +111,9 @@ void process_incoming_messages(std::string& ip_address) {
 
                     if (p_request_data->get_command() == AUDIO) {
                         receive_audio_with_tcp(new_socket);
+                        play_audio("./received_audio.wav");
+
+                        std::remove("./received_audio.wav");
                     }
 
                     if (p_request_data) {
