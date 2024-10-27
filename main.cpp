@@ -2,13 +2,14 @@
 #include <string>
 
 #include "development/global_variables/global_variables.h"
-#include "development/helpers/signal_handler/signal_handler.h"
-#include "development/helpers/get_ip_address/include/get_ip_address.h"
-#include "development/helpers/keep_ip_address_update/include/keep_ip_address_update.h"
-#include "development/helpers/get_user_input/include/get_user_input.h"
-#include "development/helpers/join_a_room/include/join_a_room.h"
-#include "development/helpers/process_incoming_messages/include/process_incoming_messages.h"
-#include "development/helpers/random_bytes/include/random_bytes.h"
+
+#include "development/helpers/include/signal_handler.h"
+#include "development/helpers/include/get_ip_address.h"
+#include "development/helpers/include/keep_ip_address_update.h"
+#include "development/helpers/include/get_user_input.h"
+#include "development/helpers/include/join_a_room.h"
+#include "development/helpers/include/process_incoming_messages.h"
+#include "development/helpers/include/random_bytes.h"
 
 #define BUFFER_SIZE 1024
 
