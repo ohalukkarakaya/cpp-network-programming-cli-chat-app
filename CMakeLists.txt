@@ -33,6 +33,9 @@ add_executable(
         development/helpers/include/send_with_tcp.h
         development/helpers/src/send_with_tcp.cpp
 
+        development/helpers/include/send_with_udp.h
+        development/helpers/src/send_with_udp.cpp
+
         development/helpers/include/parse_server_response.h
         development/helpers/src/parse_server_response.cpp
 
