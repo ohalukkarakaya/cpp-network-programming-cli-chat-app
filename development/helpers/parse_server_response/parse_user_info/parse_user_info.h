@@ -1,7 +1,3 @@
-//
-// Created by Ö. Haluk KARAKAYA on 22.10.2024.
-//
-
 #ifndef PARSE_USER_INFO_H
 #define PARSE_USER_INFO_H
 

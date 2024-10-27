@@ -1,7 +1,3 @@
-//
-// Created by Ö. Haluk KARAKAYA on 23.10.2024.
-//
-
 #include "../include/get_current_time.h"
 
 std::string getCurrentTimeAsString()

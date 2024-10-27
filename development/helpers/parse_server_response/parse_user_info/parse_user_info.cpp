@@ -1,7 +1,3 @@
-//
-// Created by Ö. Haluk KARAKAYA on 22.10.2024.
-//
-
 #include "parse_user_info.h"
 
 std::vector<RoomMember> parse_user_info( const std::string& user_info_list )

@@ -1,7 +1,3 @@
-//
-// Created by Ö. Haluk KARAKAYA on 21.10.2024.
-//
-
 #include "parse_server_response.h"
 
 std::vector<std::string> parse_server_response( const std::string& response )

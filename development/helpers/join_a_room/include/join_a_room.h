@@ -1,9 +1,5 @@
-//
-// Created by Ö. Haluk KARAKAYA on 22.10.2024.
-//
-
-#ifndef CPP_NETWORK_PROGRAMMING_CLI_CHAT_APP_JOIN_A_ROOM_H
-#define CPP_NETWORK_PROGRAMMING_CLI_CHAT_APP_JOIN_A_ROOM_H
+#ifndef JOIN_A_ROOM_H
+#define JOIN_A_ROOM_H
 
 #include <iostream>
 
@@ -18,4 +14,4 @@
 
 void join_a_room(const std::string &mainUserId, const std::string &serverIp, std::string &ipAdress);
 
-#endif //CPP_NETWORK_PROGRAMMING_CLI_CHAT_APP_JOIN_A_ROOM_H
+#endif //JOIN_A_ROOM_H

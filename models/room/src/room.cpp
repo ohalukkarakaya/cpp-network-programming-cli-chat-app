@@ -1,5 +1,3 @@
-// TO DO: Members boş kalıyor onu doldurmamızın bir yolu olmalı
-
 #include "../include/room.h"
 
 void Room::setRoomId(std::string &newRoomId)

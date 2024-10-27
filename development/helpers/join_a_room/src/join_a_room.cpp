@@ -1,7 +1,3 @@
-//
-// Created by Ö. Haluk KARAKAYA on 22.10.2024.
-//
-
 #include "../include/join_a_room.h"
 
 void join_a_room(const std::string &mainUserId, const std::string &serverIp, std::string &ipAdress)

@@ -1,7 +1,3 @@
-//
-// Created by Ö. Haluk KARAKAYA on 26.10.2024.
-//
-
 #include "../include/process_input.h"
 
 void process_input(const std::string& cmd, const std::string& message)

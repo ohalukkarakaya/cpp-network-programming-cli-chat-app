@@ -1,5 +1,5 @@
-#ifndef CPP_NETWORK_PROGRAMMING_CLI_CHAT_APP_PARSE_COMMAND_H
-#define CPP_NETWORK_PROGRAMMING_CLI_CHAT_APP_PARSE_COMMAND_H
+#ifndef PARSE_COMMAND_H
+#define PARSE_COMMAND_H
 
 #include "../../../global_variables/global_variables.h"
 
@@ -10,4 +10,4 @@
 
 RequestData* parse_request_data( std::string& rawRequest );
 
-#endif //CPP_NETWORK_PROGRAMMING_CLI_CHAT_APP_PARSE_COMMAND_H
+#endif //PARSE_COMMAND_H
