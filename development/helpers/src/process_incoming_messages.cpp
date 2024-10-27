@@ -109,8 +109,11 @@ void process_incoming_messages(std::string& ip_address) {
                     std::string received_message(buffer);
                     RequestData* p_request_data = parse_request_data(received_message);
 
-                    if (p_request_data->get_command() == AUDIO) {
+                    if (p_request_data->get_command() == AUDIO && p_request_data->get_sender_id() != main_user_id)
+                    {
+
                         receive_audio_with_tcp(new_socket);
+
                         play_audio("./received_audio.wav");
 
                         std::remove("./received_audio.wav");

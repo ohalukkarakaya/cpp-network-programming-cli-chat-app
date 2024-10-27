@@ -44,6 +44,23 @@ void process_input(const std::string& cmd, const std::string& message)
             break;
         }
         case WHISPER: {
+            float duration;
+            if (is_number(message)) {
+                duration = std::stof(message);
+            } else {
+                duration = 2.0f;
+            }
+
+            std::vector<std::pair<std::string, int>> members_addresses;
+            for (auto &member : get_selected_room().get_members()) {
+                if (member.get_user_id() != main_user_id) {
+                    members_addresses.emplace_back(member.get_user_ip(), LISTEN_PORT);
+                }
+            }
+
+            AudioRecorder recorder;
+            recorder.record_and_stream_to_multiple(members_addresses);
+
             std::cout << "Audio will send by UDP -- TO DO" << std::endl;
             break;
         }
