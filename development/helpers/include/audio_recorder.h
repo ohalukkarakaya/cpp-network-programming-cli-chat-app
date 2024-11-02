@@ -25,8 +25,7 @@ class AudioRecorder {
 public:
     AudioRecorder();
 
-    void record_audio_to_wav(const std::string& output_file_name, float duration_in_seconds);
-    void record_and_stream_to_multiple(const std::vector<std::pair<std::string, int>>& addresses, float duration_in_seconds);
+    static void record_audio_to_wav(const std::string& output_file_name, float duration_in_seconds);
 
 private:
     static bool is_command_available(const std::string& command);

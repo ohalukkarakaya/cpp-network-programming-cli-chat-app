@@ -12,6 +12,6 @@
 #include "parse_user_info.h"
 #include "get_room_id.h"
 
-void join_a_room(const std::string &main_user_id, const std::string &server_ip, std::string &ip_address);
+void join_a_room(const std::string &main_user_id, const std::string &server_ip, std::string &ip_address, bool is_test = false, std::string test_room_id = "test_room");
 
 #endif //JOIN_A_ROOM_H

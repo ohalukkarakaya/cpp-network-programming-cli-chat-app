@@ -1,6 +1,6 @@
 #include "../include/join_a_room.h"
 
-void join_a_room(const std::string &main_user_id, const std::string &server_ip, std::string &ip_address)
+void join_a_room(const std::string &main_user_id, const std::string &server_ip, std::string &ip_address, bool is_test, std::string test_room_id)
 {
     std::string message;
     char buffer[BUFFER_SIZE] = {0};
@@ -11,26 +11,39 @@ void join_a_room(const std::string &main_user_id, const std::string &server_ip, 
 
     // get server response
     int valread = read(sock, buffer, BUFFER_SIZE);
-    std::vector<std::string> rooms = parse_server_response(buffer);
+    if( !is_test )
+    {
+        std::vector<std::string> rooms = parse_server_response(buffer);
 
-    // print rooms
-    std::cout << std::endl;
-    std::cout << "\033[1;33mActive Rooms:\033[0m" << std::endl;
-    std::cout << std::endl;
+        // print rooms
+        std::cout << std::endl;
+        std::cout << "\033[1;33mActive Rooms:\033[0m" << std::endl;
+        std::cout << std::endl;
 
-    for (const std::string &room_name : rooms) {
-        std::cout << "- " << room_name << std::endl;
+        for (const std::string &room_name : rooms) {
+            std::cout << "- " << room_name << std::endl;
+        }
+        std::cout << std::endl;
+
+        //print users info
+        std::cout << "\033[33mYour User ID: \033[34m" << main_user_id << "\033[0m" << std::endl;
     }
-    std::cout << std::endl;
 
     // close socket
     close(sock);
 
-    //print users info
-    std::cout << "\033[33mYour User ID: \033[34m" << main_user_id << "\033[0m" << std::endl;
-
     const int max_length = 10;
-    std::string user_input_room_id = get_room_id(max_length);
+
+    std::string user_input_room_id;
+
+    if( is_test )
+    {
+        user_input_room_id = test_room_id;
+    }
+    else
+    {
+        user_input_room_id = get_room_id(max_length);
+    }
     get_selected_room().set_room_id(user_input_room_id);
 
     std::system("clear");
