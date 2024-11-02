@@ -35,4 +35,10 @@ typedef int socklen_t;
 
 void process_incoming_messages(std::string &ip_address);
 
+void initialize_networking();
+void cleanup_networking(int socket);
+int setup_tcp_socket(const std::string& ip_address);
+void handle_incoming_messages(int tcp_socket, const std::string& ip_address);
+void process_message(int socket, char* buffer);
+
 #endif // PROCESS_INCOMING_MESSAGES_H
