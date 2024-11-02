@@ -1,5 +1,6 @@
 #include <thread>
 #include <string>
+#include <csignal>
 
 #include "development/global_variables/global_variables.h"
 
@@ -11,45 +12,52 @@
 #include "development/helpers/include/process_incoming_messages.h"
 #include "development/helpers/include/random_bytes.h"
 
-#define BUFFER_SIZE 1024
+bool parse_argument(int argc, char* argv[], const std::string& option) {
+    for (int i = 1; i < argc; ++i) {
+        if (argv[i] == option) {
+            return false;
+        }
+    }
+    return true;
+}
 
 int main(int argc, char* argv[]) {
     is_running = true;
 
+    // Signal handling
     signal(SIGINT, signal_handler);
+
+    // Generate user ID
     main_user_id = generate_random_bytes_hex(10);
     std::string server_ip = SERVERIP;
     std::string ip_address = get_ip_address();
 
+    // Join the room
     join_a_room(main_user_id, server_ip, ip_address);
 
-    // listen incoming messages if the argument is not "--shouldlisten=false" or "--should_listen=false" for test
-    bool should_listen = true;
-    for (int i = 1; i < argc; ++i) {
-        if (std::string(argv[i]) == "--shouldlisten=false" || std::string(argv[i]) == "--should_listen=false") // Just for test
-        {
-            should_listen = false;
-            break;
-        }
-    }
+    // Check if the user wants to listen to incoming messages
+    bool should_listen = parse_argument(argc, argv, "--shouldlisten=false") &&
+                         parse_argument(argc, argv, "--should_listen=false");
 
+    // Launch threads
     std::thread message_thread;
     if (should_listen) {
         message_thread = std::thread(process_incoming_messages, std::ref(ip_address));
     }
 
     std::thread ip_update_thread(keep_ip_address_update);
-
-    // listen user inputs
     std::thread input_thread(get_user_input);
 
-    // end threads
-    if (should_listen) {
+    // Join threads safely
+    if (should_listen && message_thread.joinable()) {
         message_thread.join();
     }
-
-    ip_update_thread.join();
-    input_thread.join();
+    if (ip_update_thread.joinable()) {
+        ip_update_thread.join();
+    }
+    if (input_thread.joinable()) {
+        input_thread.join();
+    }
 
     return 0;
 }
