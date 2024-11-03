@@ -167,6 +167,190 @@ close(client_socket);
 close(server_socket);
 ```
 
+### 🤜 UDP Implementation in C++
+
+Unlike TCP, UDP is a connectionless protocol that focuses on speed rather than reliability. It is ideal for scenarios where data needs to be sent quickly, even if some packets may be lost.
+
+#### 1. Setting Up the UDP Connection
+
+UDP communication involves creating a socket, binding it to a port, and then sending or receiving data without establishing a connection.
+
+**Basic Steps for UDP Server Setup**:
+1. **Create a Socket**: Use the `socket()` function to create a UDP socket.
+2. **Bind the Socket**: Associate the socket with a port using the `bind()` function.
+
+```cpp
+// Example: UDP Server Setup
+int server_socket = socket(AF_INET, SOCK_DGRAM, 0); // SOCK_DGRAM for UDP
+struct sockaddr_in server_address;
+server_address.sin_family = AF_INET;
+server_address.sin_port = htons(8080); // Port number
+server_ddress.sin_addr.s_addr = INADDR_ANY;
+
+bind(serverSocket, (struct sockaddr*)&serverAddress, sizeof(serverAddress));
+```
+#### 2. Receiving and Sending Data
+
+Since UDP is connectionless, data is sent and received using `sendto()` and `recvfrom()` functions, which specify the destination or source address.
+
+**Receiving Data**:
+```cpp
+char buffer[1024] = {0};
+struct sockaddr_in clientAddress;
+socklen_t client_address_len = sizeof(clientAddress);
+
+recvfrom(server_socket, buffer, sizeof(buffer), 0, (struct sockaddr*)&client_address, &client_address_len);
+std::cout << "Received: " << buffer << std::endl;
+```
+
+**Sending Data**:
+```cpp
+// Example: UDP Client Setup
+int client_socket = socket(AF_INET, SOCK_DGRAM, 0); // SOCK_DGRAM for UDP
+struct sockaddr_in server_ddress;
+server_address.sin_family = AF_INET;
+server_address.sin_port = htons(8080); // Server port
+server_address.sin_addr.s_addr = inet_addr("127.0.0.1"); // Server IP
+
+// Sending data to the server
+std::string message = "Hello, Server!";
+sendto(client_socket, message.c_str(), message.size(), 0, (struct sockaddr*)&server_address, sizeof(server_address));
+
+// Receiving data from the server
+char buffer[1024] = {0};
+struct sockaddr_in from_address;
+socklen_t from_address_len = sizeof(from_address);
+
+recvfrom(client_socket, buffer, sizeof(buffer), 0, (struct sockaddr*)&from_address, &from_address_len);
+std::cout << "Server says: " << buffer << std::endl;
+```
+
+#### 4. Closing the Socket
+
+Just like with TCP, you should close the socket when you're done with communication.
+
+```cpp
+// Closing the socket
+close(client_socket);
+close(server_socket);
+```
+
+### 📂 FTP Implementation in C++
+
+The **File Transfer Protocol (FTP)** is a standard network protocol used to transfer files between a client and a server. It operates over TCP to ensure reliable data transmission and uses two separate channels: one for commands and another for data transfer.
+
+#### 1. Understanding FTP Communication
+
+FTP uses two connections:
+- **Control Connection**: A TCP connection (usually on port 21) used for sending commands and receiving responses.
+- **Data Connection**: A separate TCP connection used for transferring file data between the client and the server.
+
+#### 2. Setting Up an FTP Client
+
+To implement a basic FTP client in C++, you need to establish a control connection and send FTP commands following the protocol standards.
+
+**Basic Steps for FTP Client Setup**:
+1. **Create and Connect a TCP Socket**: Establish a control connection to the FTP server on port 21.
+2. **Send Commands and Receive Responses**: Use the `send()` and `recv()` functions to communicate with the server.
+3. **Manage Data Transfer**: Open a separate data connection for file transfers when needed.
+
+#### 3. Establishing a Control Connection
+
+```cpp
+// Example: Establishing a Control Connection
+int control_socket = socket(AF_INET, SOCK_STREAM, 0);
+struct sockaddr_in server_address;
+server_address.sin_family = AF_INET;
+server_address.sin_port = htons(21); // FTP control port
+server_address.sin_addr.s_addr = inet_addr("127.0.0.1"); // FTP server IP
+
+connect(control_socket, (struct sockaddr*)&server_address, sizeof(server_address));
+
+// Receiving the server's welcome message
+char buffer[1024] = {0};
+recv(control_socket, buffer, sizeof(buffer), 0);
+std::cout << "Server: " << buffer << std::endl;
+```
+#### 4. Sending FTP Commands
+
+FTP commands are sent as plain text strings. For example, to log in to the server, you use the `USER` and `PASS` commands.
+
+```cpp
+// Sending the USER command
+std::string user_command = "USER yourUsername\r\n";
+send(control_socket, user_command.c_str(), user_command.size(), 0);
+recv(control_socket, buffer, sizeof(buffer), 0);
+std::cout << "Server: " << buffer << std::endl;
+
+// Sending the PASS command
+std::string pass_command = "PASS your_password\r\n";
+send(control_socket, pass_command.c_str(), pass_command.size(), 0);
+recv(control_socket, buffer, sizeof(buffer), 0);
+std::cout << "Server: " << buffer << std::endl;
+```
+
+#### 5. Setting Up a Data Connection
+
+For file transfers, you need to switch to active or passive mode:
+
+- **Active Mode:** The server connects back to the client for data transfer.
+- **Passive Mode:** The client connects to a server-specified port for data transfer.
+
+Example: Entering Passive Mode and Connecting to the Data Port:
+```cpp
+// Sending the PASV command to enter passive mode
+std::string pasv_command = "PASV\r\n";
+send(control_socket, pasv_command.c_str(), pasv_command.size(), 0);
+recv(control_socket, buffer, sizeof(buffer), 0);
+std::cout << "Server: " << buffer << std::endl;
+
+// Parse the server response to get the data port
+int p1, p2;
+sscanf(buffer, "227 Entering Passive Mode (%*d,%*d,%*d,%*d,%d,%d).", &p1, &p2);
+int data_port = p1 * 256 + p2;
+
+// Create a new socket for the data connection
+int data_socket = socket(AF_INET, SOCK_STREAM, 0);
+server_address.sin_port = htons(data_port); // Use the parsed data port
+connect(data_socket, (struct sockaddr*)&server_sddress, sizeof(server_address));
+```
+
+#### 6. Transferring Files
+
+To download or upload files, use FTP commands like RETR (retrieve) and STOR (store).
+
+Example: Downloading a File:
+```cpp
+// Sending the RETR command to download a file
+std::string retr_command = "RETR example.txt\r\n";
+send(control_socket, retr_command.c_str(), retr_command.size(), 0);
+recv(control_socket, buffer, sizeof(buffer), 0);
+std::cout << "Server: " << buffer << std::endl;
+
+// Receiving the file data from the data connection
+char file_buffer[1024] = {0};
+recv(data_socket, file_buffer, sizeof(file_buffer), 0);
+std::cout << "File Data: " << file_buffer << std::endl;
+
+// Close the data connection
+close(data_socket);
+```
+
+#### 7. Closing the Connection
+
+Always close the control and data sockets after the communication is complete.
+
+```cpp
+// Sending the QUIT command to terminate the session
+std::string quit_command = "QUIT\r\n";
+send(control_socket, quit_command.c_str(), quit_command.size(), 0);
+recv(control_socket, buffer, sizeof(buffer), 0);
+std::cout << "Server: " << buffer << std::endl;
+
+// Closing the control socket
+close(control_socket);
+```
+
 * * *
 
 ## 🚀 About CLI Chat App
