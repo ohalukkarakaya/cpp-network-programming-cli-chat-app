@@ -1,6 +1,8 @@
 #ifndef PROCESS_INCOMING_COMMAND_H
 #define PROCESS_INCOMING_COMMAND_H
 
+#include <iostream>
+
 #include "../../global_variables/global_variables.h"
 
 #include "../../../models/include/room.h"

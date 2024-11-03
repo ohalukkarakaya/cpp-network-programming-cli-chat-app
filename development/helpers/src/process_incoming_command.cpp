@@ -1,5 +1,4 @@
 #include "../include/process_incoming_command.h"
-#include <iostream>
 
 void handle_join_room(RequestData& request_data) {
     if (request_data.get_message() == get_selected_room().get_room_id() &&
