@@ -5,6 +5,10 @@
 #include <fstream>
 #include <unistd.h>
 #include <sys/socket.h>
+#include <array>
+#include <fstream>
+#include <iostream>
+#include <string>
 
 void receive_audio_with_tcp(int client_socket);
 

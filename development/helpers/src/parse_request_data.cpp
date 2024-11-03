@@ -1,5 +1,4 @@
 #include "../include/parse_request_data.h"
-#include <memory>
 
 std::unique_ptr<RequestData> handle_missing_parameter() {
     std::cerr << "Missing Parameter" << std::endl;

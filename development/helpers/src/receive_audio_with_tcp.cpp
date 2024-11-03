@@ -1,8 +1,4 @@
 #include "../include/receive_audio_with_tcp.h"
-#include <array>
-#include <fstream>
-#include <iostream>
-#include <string>
 
 void receive_audio_with_tcp(int client_socket) {
     constexpr size_t BUFFER_SIZE = 1024;

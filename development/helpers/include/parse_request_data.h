@@ -1,6 +1,8 @@
 #ifndef PARSE_REQUEST_DATA_H
 #define PARSE_REQUEST_DATA_H
 
+#include <memory>
+
 #include "../../global_variables/global_variables.h"
 
 #include "../../../models/include/command.h"
