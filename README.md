@@ -390,4 +390,62 @@ All other communication, including the actual messages and data transfer, occurs
 - **C++17**: Core programming language
 - **CMake**: Build system for easy project setup and configuration
 
+## 🛠️ Installation
 
+> ⚠️ **Important**: Before proceeding, make sure that the server-side application is deployed and running. The chat application relies on the server for managing rooms and user information.
+
+Follow these steps to set up and run the CLI Chat Application:
+
+### 1. Clone the Repository
+
+First, clone the repository to your local machine using the following command:
+
+```bash
+git clone https://github.com/ohalukkarakaya/cpp-network-programming-cli-chat-app.git
+cd cpp-network-programming-cli-chat-app
+```
+
+### 2. Build the Project
+
+Create a `build` directory, navigate into it, and use `cmake` and `make` to compile the project:
+
+```bash
+mkdir build
+cd build
+cmake ..
+make
+```
+
+This will generate the executable file for the chat application.
+
+### 3. Running the Application
+
+Once the build is successful, you can run the program as follows:
+
+```bash
+./cli_chat_app
+```
+
+### 4. Deploying the Program
+
+To deploy the program, you can move the compiled executable to a directory included in your system's PATH or create a shortcut to the executable for easy access:
+
+<br>
+
+> 📝 **Note:** <br> Ensure that the server's IP address and port are correctly configured in the application settings before running the chat app.
+
+<br>
+
+1. **Option 1:** Move to `/usr/local/bin` (Linux/macOS)
+    ```bash
+    sudo mv cli_chat_app /usr/local/bin
+    ```
+    
+    Now, you can run the program from anywhere using `cli_chat_app`.
+
+2. **Option 2:** Create a Shortcut (Windows)
+    - Copy the executable file to a preferred location.
+    - Add the location to your system's PATH environment variable to run it from the command line.
+  
+**You are now ready to use the CLI Chat Application to join or create rooms and start real-time communication!**
+    
