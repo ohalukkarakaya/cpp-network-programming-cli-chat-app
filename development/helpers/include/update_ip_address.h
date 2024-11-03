@@ -8,6 +8,6 @@
 #include "../../../models/include/command.h"
 #include "../../../models/include/room.h"
 
-void update_ip_address( std::string new_ip_address );
+void update_ip_address(const std::string& new_ip_address);
 
 #endif //UPDATE_IP_ADDRESS_H
