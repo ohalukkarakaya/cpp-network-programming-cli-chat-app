@@ -3,7 +3,8 @@
 
 TEST(ParseRequestDataTest, ValidRequest) {
 std::string raw_request = "MESSAGE:MESSAGE:test_user/127.0.0.1/Hello, World!";
-RequestData* request = parse_request_data(raw_request);
+std::unique_ptr<RequestData> request_ptr = parse_request_data(raw_request);
+RequestData* request = request_ptr.get();
 
 ASSERT_NE(request, nullptr);
 EXPECT_EQ(request->get_command(), MESSAGE);
@@ -15,7 +16,8 @@ delete request;
 
 TEST(ParseRequestDataTest, InvalidRequest) {
 std::string raw_request = "INVALID_FORMAT";
-RequestData* request = parse_request_data(raw_request);
+std::unique_ptr<RequestData> request_ptr = parse_request_data(raw_request);
+RequestData* request = request_ptr.get();
 
 ASSERT_NE(request, nullptr);
 EXPECT_EQ(request->get_command(), UNKNOWN);

@@ -8,6 +8,6 @@
 
 #include "get_current_time.h"
 
-RequestData* parse_request_data( std::string& raw_request );
+std::unique_ptr<RequestData> parse_request_data(std::string& raw_request);
 
 #endif //PARSE_REQUEST_DATA_H
