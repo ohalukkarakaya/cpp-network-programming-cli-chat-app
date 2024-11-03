@@ -12,10 +12,10 @@
 - [<code>🌐 Server-Side Overview</code>](#-server-side-overview)
 - [<code>📝 Usage</code>](#-usage)
 - [<code>🌟 Features</code>](#-features)
-- [<code>🧪 Technologies Used</code>](#-technologies-used)
-- [<code>🛠️ Installation</code>](#-installation)
-- [<code>👍 Conclusion</code>](#-conclusion)
-- [<code>👉 References</code>](#-references)
+- [<code>🛡️ Technologies Used</code>](#️-technologies-used)
+- [<code>🛠️ Installation</code>](#️-installation)
+- [<code>🤝 Contributing</code>](#-contributing)
+- [<code>📜 License</code>](#-license)
 
 <hr style="border: 0.1px solid #ccc;" />
 
@@ -365,6 +365,13 @@ The application includes a **server-side component** responsible for managing ch
 
 All other communication, including the actual messages and data transfer, occurs **directly between clients using TCP in a peer-to-peer (P2P) manner**. This design ensures a decentralized communication flow while still allowing room management and user tracking by the server.
 
+<br>
+
+> 📂 **Related Repository**: <br>
+[cpp-network-programming-cli-chat-app-server-side](https://github.com/ohalukkarakaya/cpp-network-programming-cli-chat-app-server-side.git)
+
+<br>
+
 ## 📝 Usage
 
 <img src="https://github.com/ohalukkarakaya/cpp-network-programming-cli-chat-app/blob/32550585a8b2b17be8e0ef01107ecd97e652511c/assets/example_ss.png" alt="ss" style="width: 100%; height: auto;"></img>
@@ -378,6 +385,8 @@ All other communication, including the actual messages and data transfer, occurs
    - **Text Message**: Type `:m:` or `:message:` followed by the message you want to send. (e.g., `:m: Hello There!` for send `Hello There!` message).
    - **Audio Message**: Type `:a:` or `:audio:` and specify the number of seconds you wish to record (e.g., `:a: 5` for a 5-second recording). The recording will begin immediately, and once the specified duration is complete, the audio will be sent to other users in the room and played automatically on their devices.
 
+* * *
+
 ## 🌟 Features
 
 - **Near-Time Messaging**: Supports sending and receiving messages instantly.
@@ -385,10 +394,14 @@ All other communication, including the actual messages and data transfer, occurs
 - **Cross-Platform Compatibility**: Developed to work seamlessly on macOS, Linux, and Windows (However all tests made in Intel chip MacOS).
 - **User-Friendly CLI Interface**: Easy-to-use text-based interface for chatting.
 
-## 🧪 Technologies Used
+* * *
+
+## 🛡️ Technologies Used
 
 - **C++17**: Core programming language
 - **CMake**: Build system for easy project setup and configuration
+
+* * *
 
 ## 🛠️ Installation
 
@@ -448,4 +461,22 @@ To deploy the program, you can move the compiled executable to a directory inclu
     - Add the location to your system's PATH environment variable to run it from the command line.
   
 **You are now ready to use the CLI Chat Application to join or create rooms and start real-time communication!**
+
+* * *
+
+## 🤝 Contributing
+
+Contributions are welcome! Please follow these steps:
+
+1. Fork the project.
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`).
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`).
+4. Push to the branch (`git push origin feature/AmazingFeature`).
+5. Open a pull request.
+
+* * *
+
+## 📜 License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
     
