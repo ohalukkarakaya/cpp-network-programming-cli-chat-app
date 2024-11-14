@@ -54,7 +54,6 @@ void process_incoming_command(RequestData& request_data) {
             break;
         case UNKNOWN:
         default:
-            // unknown commands are ignored
             break;
     }
 }

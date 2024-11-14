@@ -4,9 +4,9 @@ void play_audio(const std::string& file_path) {
     std::string command;
 
 #ifdef _WIN32
-    command = "start " + file_path; // Windows için "start" komutu
+    command = "start " + file_path; // for win
 #elif __APPLE__
-    command = "afplay " + file_path; // macOS için "afplay" komutu
+    command = "afplay " + file_path; // for mac
 #else
     command = "xdg-open " + file_path; // Linux için "xdg-open" komutu
 #endif

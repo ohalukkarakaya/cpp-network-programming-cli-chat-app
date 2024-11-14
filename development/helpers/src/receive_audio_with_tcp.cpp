@@ -19,11 +19,9 @@ void receive_audio_with_tcp(int client_socket) {
             audio_file.write(buffer.data(), bytes_read);
             total_data_received += bytes_read;
         } else if (bytes_read == 0) {
-            // Connection closed gracefully by the client
             std::cout << "Connection closed by client. Total data received: " << total_data_received << " bytes." << std::endl;
             break;
         } else {
-            // An error occurred during receiving
             std::cerr << "Error occurred while receiving data: " << strerror(errno) << std::endl;
             break;
         }

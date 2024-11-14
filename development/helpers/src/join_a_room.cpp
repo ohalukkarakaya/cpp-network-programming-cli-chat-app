@@ -3,7 +3,6 @@
 namespace {
     constexpr int MAX_LENGTH = 10;
 
-    // Helper function to get room list from server
     std::vector<std::string> get_room_list(int sock) {
         char buffer[BUFFER_SIZE] = {0};
         int valread = read(sock, buffer, BUFFER_SIZE);
@@ -13,7 +12,6 @@ namespace {
         return parse_server_response(buffer);
     }
 
-    // Helper function to display active rooms
     void display_active_rooms(const std::vector<std::string>& rooms) {
         std::cout << std::endl;
         std::cout << "\033[1;33mActive Rooms:\033[0m" << std::endl;
@@ -24,12 +22,10 @@ namespace {
         std::cout << std::endl;
     }
 
-    // Helper function to display user information
     void display_user_info(const std::string& main_user_id) {
         std::cout << "\033[33mYour User ID: \033[34m" << main_user_id << "\033[0m" << std::endl;
     }
 
-    // Helper function to join a room
     void join_room(const std::string& main_user_id, std::string& ip_address, const std::string& user_input_room_id, const std::string& server_ip) {
         std::string message = "JOINROOM/" + main_user_id + "/" + ip_address + "/" + user_input_room_id;
         int joinSock = send_with_tcp(PORT, server_ip, message, "JOINROOM");

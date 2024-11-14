@@ -9,7 +9,6 @@
 #include <string>
 #include <vector>
 
-// gets size
 std::string generate_random_bytes_hex(size_t length);
 
 #endif // RANDOM_BYTES_H

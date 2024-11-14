@@ -12,6 +12,7 @@
 #include "development/helpers/include/process_incoming_messages.h"
 #include "development/helpers/include/random_bytes.h"
 
+// Arguments are for taking users options (reason of it is described with more detail below)
 bool parse_argument(int argc, char* argv[], const std::string& option) {
     for (int i = 1; i < argc; ++i) {
         if (argv[i] == option) {
@@ -23,8 +24,6 @@ bool parse_argument(int argc, char* argv[], const std::string& option) {
 
 int main(int argc, char* argv[]) {
     is_running = true;
-
-    // Signal handling
     signal(SIGINT, signal_handler);
 
     // Generate user ID
@@ -32,10 +31,13 @@ int main(int argc, char* argv[]) {
     std::string server_ip = SERVERIP;
     std::string ip_address = get_ip_address();
 
-    // Join the room
     join_a_room(main_user_id, server_ip, ip_address);
 
     // Check if the user wants to listen to incoming messages
+    // Since app receives messages from port 8080, when we run
+    // Two client on same computer, one of them is not able to
+    // Listen, so we are not listening for incoming messages
+    // From one (For test reasons only)
     bool should_listen = parse_argument(argc, argv, "--shouldlisten=false") &&
                          parse_argument(argc, argv, "--should_listen=false");
 
@@ -48,7 +50,7 @@ int main(int argc, char* argv[]) {
     std::thread ip_update_thread(keep_ip_address_update);
     std::thread input_thread(get_user_input);
 
-    // Join threads safely
+    // Threads
     if (should_listen && message_thread.joinable()) {
         message_thread.join();
     }
